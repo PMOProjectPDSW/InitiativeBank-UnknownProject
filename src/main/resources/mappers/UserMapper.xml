@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.UserMapper">
+    <!--
+    <resultMap type='User' id='UserResult'>     
+        <id property='id' column='user_id'/> 
+        <result property='fullName' column='user_fullName'/>
+        <result property='email' column='user_email'/>
+        <result property='departmentArea' column='user_departmentArea'/>
+        <result property='password' column='user_password'/>
+        <result property='rol' column='user_rol'/>
+    </resultMap>
+    -->
+    
+    <resultMap type='User' id='UserResult'>     
+        <id property='id' column='id'/> 
+        <result property='fullName' column='full_name'/>
+        <result property='email' column='email'/>
+        <result property='departmentArea' column='deparment_area'/>
+        <result property='password' column='pass'/>        
+        <!--
+        <result property='rol' column='t_tipos_user_id'/>        
+        -->
+        <association property='rol' javaType='Role' resultMap='pdsw.project.persistence.dao.mybatis.mappers.RoleMapper.RoleResult' columnPrefix='role_'/>
+        
+        <collection property='iniciativas' ofType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='initiative_'></collection>
+        
+    </resultMap>
+    
+    <select id='getUserByEmail' parameterType="map" resultMap='UserResult'>
+        SELECT
+            *
+        FROM usuario
+        WHERE email = #{user_email}
+    </select>
+    
+    
+    
+    
+    
+    
+    
+    
+    <select id='getUserByID' parameterType="map" resultMap='UserResult'>
+        SELECT
+            U.id                    as user_id,
+            U.full_name             as user_fullName,
+            U.email                 as user_email,            
+            U.deparment_area        as user_departmentArea,
+            U.pass                  as user_password,
+            U.t_tipos_user_id       as user_rol
+        FROM usuario as U
+        WHERE id = #{user_id}
+    </select>
+    
+    <select id='getUsers' parameterType="map" resultMap='UserResult'>
+        SELECT
+            U.id                    as user_id,
+            U.full_name             as user_fullName,
+            U.email                 as user_email,            
+            U.deparment_area        as user_departmentArea,
+            U.pass                  as user_password,
+            U.t_tipos_user_id       as user_rol
+        FROM usuario as U
+    </select>
+        
+    <!--<delete id="deleteAll">
+        DELETE
+        FROM Usuario
+    </delete>
+    -->
+    
+</mapper>

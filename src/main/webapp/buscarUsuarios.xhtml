@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Usuarios</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>
+    </h:head>
+    <h:body >
+        <div class="item">
+            <img src="/resources/img/Header-ECI-Logo-Labs.svg" class="imagen" />
+        </div>
+
+        <h1></h1>
+        <h:form id="buscarUsuarioForm">
+
+            <p:growl id="msgs" showDetail="true" /> 
+            <p:megaMenu  style="margin-top:20px" class="menuBar">
+                <p:menuitem value="Perfil" style="width:95%; font-weight:bold;  color:#FFFFFF;"
+                            url="/project/temp.xhtml" icon="ui-icon-home" class="ui-menuitem"/>
+
+            </p:megaMenu>
+            <br></br>
+            <p:panel id="buscarUsuario" visible="true" class="ui-panel-titlebar" >
+
+                <div style="color: #990000; font-weight:bold; font-size: 25px;">
+                    Buscar Usuarios
+                    <br></br>
+                    ______-___________-______
+                </div>
+
+                <br></br>
+                <p:dataTable id="UserTable" var="User" value="#{userBean.searchUsers()}" widgetVar="UserTable" scrollable="true"
+                             paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="2,5,10,15">
+                    <p:column filterBy="#{User.id}" headerText="ID" sortBy="#{User.id}">
+                        <h:outputText value="#{User.id}" binding = "#{id}"/>
+                    </p:column>
+                    <p:column filterBy="#{User.fullName}" headerText="Nombre">
+                        <h:outputText value="#{User.fullName}" />
+                    </p:column>
+                    <p:column filterBy="#{User.correo}" headerText="Email">
+                        <h:outputText value="#{Usuario.correo}" />
+                    </p:column>
+                    <p:column filterBy="#{User.getStringRol()}" headerText="Rol Actual">
+                        <f:facet name="filter">
+                            <p:selectOneMenu onchange="PF('UsuarioTable').filter()" >
+                                <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                <f:selectItems value="#{userBean.roles}" />
+                            </p:selectOneMenu>
+                        </f:facet>
+
+                        <h:outputText value="#{Usuario.rol}" />
+                    </p:column>
+
+                    <p:column headerText="Roles">
+                        <p:selectOneMenu id="roles" binding="#{rolnuevo}" >
+                            <f:selectItem itemLabel="Select Rol" itemValue="" noSelectionOption="true" />
+                            <f:selectItems value="#{adminBean.roles}" />
+                        </p:selectOneMenu>
+                        <p:commandButton id="Actualizar" update="busquedaUsuarioForm" value="Actualizar" actionListener="#{adminBean.updateUsuario(doc.value,rolnuevo.value)}" icon="ui-icon-check"></p:commandButton>
+                    </p:column>		
+
+                </p:dataTable>
+                <br></br>
+
+            </p:panel>
+            <br></br>            
+        </h:form>   
+    </h:body>
+</html>

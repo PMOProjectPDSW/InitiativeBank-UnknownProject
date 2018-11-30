@@ -1,0 +1,49 @@
+@charset "ISO-8859-1";
+
+.ui-panel-titlebar{
+    border:red;
+    text-align: center;
+}
+
+.ui-panelGrid-Datos1{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ui-button {
+    background-color: #990000; /* Red */
+    /*border: 2px solid #990000;*/
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+}
+
+.imagen{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginClass{
+    color: #990000;
+    margin: auto;
+    text-align: center;
+    /*font-size: 8px;*/    
+    vertical-align: middle;
+    width: fit-content;
+}
+
+.loginClass fieldset {
+    margin: auto;
+    text-align: center;
+    /*font-size: 8px;*/    
+    vertical-align: middle;
+    width: fit-content;
+}
+/*
+.loginClass commandButton {
+    margin: calc;
+    text-align: right;   
+    vertical-align: middle;
+    width: 90%;
+}*/

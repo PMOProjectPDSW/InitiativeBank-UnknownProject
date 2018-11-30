@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper">
+    
+    <resultMap type='Initiative' id='InitiativeResult'>
+        <id property='id' column='id'/>
+        <result property='state' column='state'/>  
+        <result property='title' column='title' />      
+        <result property='description' column='content'/>     
+        <result property='creationDate' column='date_of_creation'/>
+        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='user_'/>
+        <association property='tag' javaType='Tag' resultMap='pdsw.project.persistence.dao.mybatis.mappers.TagMapper.TagResult' columnPrefix='tag_'/>
+        <collection property='comentarios' ofType="Comment" resultMap='pdsw.project.persistence.dao.mybatis.mappers.CommentMapper.CommentResult' columnPrefix='comment_'></collection>        
+        <collection property='votos' ofType='Vote' resultMap='pdsw.project.persistence.dao.mybatis.mappers.VoteMapper.VoteResult' columnPrefix='vote_'></collection>
+    </resultMap>
+    
+    <select id="getInitiatives" parameterMap="map" resultMap="InitiativeResult">
+        SELECT 
+            I.id                    as initiative_id,
+            I.state                 as initiative_state,
+            I.title                 as initiative_title,
+            I.content               as initiative_description,
+            I.date_of_creation      as initiative_creationDate
+        FROM intention as I
+    </select>
+    
+    <select id="getInitiative" parameterMap="map" resultMap="InitiativeResult">
+        SELECT
+            I.id                    as initiative_id,
+            I.state                 as initiative_state,
+            I.title                 as initiative_title,
+            I.content               as initiative_description,
+            I.date_of_creation      as initiative_creationDate,
+            I.tag                   as initiative_tag
+        FROM intention as I
+        join t_intencion_palabra on intention.user_id = t_intencion_palabra.intention_id
+        join t_palabras on t_palabras.id = t_intencion_palabra.t_palabras_id
+    </select>
+    
+    <!--
+    <insert parameterType="map" id="addInitiative">
+    	INSERT INTO iniciativas values(#{i.id},#{i.estado},#{i.autor.documento},#{i.nombre},#{i.descripcion},#{i.fechaCreacion}, string_to_array(#{i.palabrasClave},','),#{i.area});   	
+    </insert>
+    -->
+  </mapper>
+
