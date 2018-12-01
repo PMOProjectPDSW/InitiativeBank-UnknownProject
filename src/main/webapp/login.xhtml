@@ -10,29 +10,35 @@
         <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>        
     </h:head>
     <h:body>
-        <div class="header">
+        <div class="topHeader">
             <img src="resources/img/Header-ECI-Logo-Labs.svg" class="imagen" />
         </div>
         <h1></h1>
         <div id="sectionLogin" class="loginClass">
             <h:form id="formLogin" >
                 <p:growl id="growlLogin" showDetail="true" sticky="false" /> 
-                <p:fieldset legend="Iniciar Sesión" style="margin-bottom:20px">
-                    <h:panelGrid columns="2" cellpadding="0">
+                <p:fieldset legend="Iniciar Sesión" >
+                    <br></br>
+                    <h:panelGrid columns="1" cellpadding="2" class="panelLoginClass">
+                        <p:row>
                         <p:outputLabel value="Usuario Correo:" for="username" />
                         <p:inputText id="username" required="true" value="#{loginBean.username}" title="Introduce tu correo" placeholder="Usuario Correo"/>
                         <p:tooltip id="toolTipUsername" for="username" showEvent="focus" hideEvent="blur" />
-                            <br></br>
+                        </p:row>                 
+                                                
+                        <p:row>
                         <p:outputLabel value="Contraseña:" for="password" />
                         <p:inputText id="password" type="password" required="true" value="#{loginBean.password}" title="Introduce tu contraseña" placeholder="Contraseña"/>
                         <p:tooltip id="toolTipPassword" for="password" showEvent="focus" hideEvent="blur" />
-                            <br></br>
-                        <p:commandButton value="Ingresar" update="growlLogin" actionListener="#{loginBean.doLogin()}" />             
-                    </h:panelGrid>
+                        </p:row>
+
+                        <p:row>
+                        <p:commandButton value="Ingresar" update="growlLogin" actionListener="#{loginBean.doLogin()}" /> 
+                        </p:row>
+                    </h:panelGrid>                    
                 </p:fieldset>
             </h:form>
-        </div>
-        
+        </div>        
     </h:body>    
 </html>
 

@@ -52,10 +52,7 @@ public class MyBatisUserDAO implements UserDAO{
 
     @Override
     public List<User> loadAll() throws PersistenceException {
-        try {
-            //Test
-            System.out.println("TRYING: loadAll MyBatisUserDAO");
-            //System.out.println(userMapper.getUsers());            
+        try {         
             return userMapper.getUsers();           
         } catch (Exception ex) {
             throw new PersistenceException("\nERROR MyBATIS:\nNo se pudieron cargar todos los usuarios: \n", ex);

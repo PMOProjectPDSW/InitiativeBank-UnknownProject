@@ -45,11 +45,8 @@ public class UserBean extends BaseBean {
 
     public List<User> searchUsers() {
         try {
-            System.out.println("TRYING: searchUsers Bean");
             users = initiativeBankServices.searchUsers();
-            System.out.println("DONE: searchUsers Bean");
-            System.out.println(users.toString());
-            //users.get(0).;
+            //System.out.println(users.toString());
         } catch (Exception ex) {
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }

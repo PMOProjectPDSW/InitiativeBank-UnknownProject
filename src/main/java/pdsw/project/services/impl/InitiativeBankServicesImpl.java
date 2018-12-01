@@ -40,6 +40,10 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
 
     public InitiativeBankServicesImpl() {
     }
+    /*
+    System.out.println("----------|username|user.getEmail()|");
+    System.out.println("----------|"+username+"|"+user.getEmail()+"|"); 
+    */
 
     /**
      *
@@ -52,9 +56,9 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     public boolean checkLogin(String username, String password) throws InitiativeBankException {
         try {
             User user = userDAO.load(username);
-            boolean loginAccess;
+            boolean loginAccess;                                  
             if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {
-            //if ((user.getEmail() == username) && (user.getPassword() == password)) {
+           
                 loginAccess = true;
             } else {
                 loginAccess = false;
@@ -89,14 +93,11 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     public List<User> searchUsers() throws InitiativeBankException {
         List<User> users;
         try {
-            System.out.println("TRYING: searchUsers Impl");
             users = userDAO.loadAll();
-            //return userDAO.loadAll();
-            System.out.println("DONE: searchUsers Impl");
+            return userDAO.loadAll();
         } catch (PersistenceException ex) {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
-        return users;
     }
 
     @Override

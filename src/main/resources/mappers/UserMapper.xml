@@ -30,9 +30,8 @@
         
     </resultMap>
     
-    <select id='getUserByEmail' parameterType="map" resultMap='UserResult'>
-        SELECT
-            *
+    <select id='getUserByEmail' resultMap='UserResult'>
+        SELECT *
         FROM usuario
         WHERE email = #{user_email}
     </select>
@@ -44,7 +43,7 @@
     
     
     
-    <select id='getUserByID' parameterType="map" resultMap='UserResult'>
+    <select id='getUserByID' resultMap='UserResult'>
         SELECT
             U.id                    as user_id,
             U.full_name             as user_fullName,
@@ -56,7 +55,7 @@
         WHERE id = #{user_id}
     </select>
     
-    <select id='getUsers' parameterType="map" resultMap='UserResult'>
+    <select id='getUsers' resultMap='UserResult'>
         SELECT
             U.id                    as user_id,
             U.full_name             as user_fullName,

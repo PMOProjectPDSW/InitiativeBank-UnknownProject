@@ -40,10 +40,10 @@ public class LoginBean extends BaseBean {
             loginState = initiativeBankServices.checkLogin(username, password);
             if (loginState) {
                 user = initiativeBankServices.searchUser(username);
-                FacesContext.getCurrentInstance().getExternalContext().redirect("temp.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
             }
         } catch (InitiativeBankException ex) {
-            throw new InitiativeBankException("\nERROR:\nClass: LoginBean\n-Method: checkLogin()\nNo se pudo loggear correctamente el usuario: " + username, ex);
+            throw new InitiativeBankException("\nERROR:\nClass: LoginBean\n-Method: doLogin()\nNo se pudo loggear correctamente el usuario: " + username, ex);
         } catch (IOException ex) {
             Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
         }

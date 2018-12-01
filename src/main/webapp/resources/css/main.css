@@ -18,32 +18,41 @@
     font-size: 16px;
 }
 
-.imagen{
+.topHeader {    
+    margin: auto;
+    width: auto;
+}
+
+.buttonsHeader {    
+    margin: auto;
+    vertical-align: middle;
+    width: fit-content;
+    text-align: center;
+}
+
+.imagen {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.loginClass{
-    color: #990000;
+.loginClass {    
     margin: auto;
-    text-align: center;
-    /*font-size: 8px;*/    
     vertical-align: middle;
     width: fit-content;
+    text-align: left;
+    /*font-size: 8px;*/    
 }
 
 .loginClass fieldset {
     margin: auto;
-    text-align: center;
-    /*font-size: 8px;*/    
     vertical-align: middle;
     width: fit-content;
+    text-align: center;
+    /*margin-bottom:2000px;*/ 
 }
-/*
-.loginClass commandButton {
-    margin: calc;
+
+.panelLoginClass {
     text-align: right;   
-    vertical-align: middle;
-    width: 90%;
-}*/
+}
+

@@ -17,7 +17,7 @@
         <collection property='votos' ofType='Vote' resultMap='pdsw.project.persistence.dao.mybatis.mappers.VoteMapper.VoteResult' columnPrefix='vote_'></collection>
     </resultMap>
     
-    <select id="getInitiatives" parameterMap="map" resultMap="InitiativeResult">
+    <select id="getInitiatives" resultMap="InitiativeResult">
         SELECT 
             I.id                    as initiative_id,
             I.state                 as initiative_state,
@@ -27,7 +27,7 @@
         FROM intention as I
     </select>
     
-    <select id="getInitiative" parameterMap="map" resultMap="InitiativeResult">
+    <select id="getInitiative" resultMap="InitiativeResult">
         SELECT
             I.id                    as initiative_id,
             I.state                 as initiative_state,
@@ -36,8 +36,7 @@
             I.date_of_creation      as initiative_creationDate,
             I.tag                   as initiative_tag
         FROM intention as I
-        join t_intencion_palabra on intention.user_id = t_intencion_palabra.intention_id
-        join t_palabras on t_palabras.id = t_intencion_palabra.t_palabras_id
+        WHERE id = #{initiative_id}
     </select>
     
     <!--

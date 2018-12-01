@@ -12,7 +12,7 @@
         <association property='iniciativa' javaType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='initiative_'/>
     </resultMap>
 
-    <select id='getVote' parameterType="map" resultMap='VoteResult'>
+    <select id='getVote' resultMap='VoteResult'>
         SELECT
             V.id                       as comment_id,
             V.like_dislike             as comment_description,
@@ -22,7 +22,7 @@
         WHERE id = #{vote_id}
     </select>
     
-    <select id='getVotes' parameterType="map" resultMap='VoteResult'>
+    <select id='getVotes' resultMap='VoteResult'>
         SELECT
             V.id                       as comment_id,
             V.like_dislike             as comment_description,
