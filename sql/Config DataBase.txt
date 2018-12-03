@@ -1,0 +1,7 @@
+jdbc:postgresql://ec2-54-225-110-156.compute-1.amazonaws.com:5432/d52v1q5tp4h3b5?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+
+
+lopjdvjabgfdeu
+
+
+781d79ba2cf0c4f93213f5fb8bcace4e12a34cb544e1852a09f26afa43752efd
