@@ -74,7 +74,7 @@ CREATE TABLE Initiative (
     KeyWords text[]  NOT NULL,
     Users_ID int  NOT NULL,
     Tag_ID int  NOT NULL,       
-    CONSTRAINT valite_status CHECK (Status in ('En espera de revisiÃ³n','En revisiÃ³n','Proyecto','Solucionado')) NOT DEFERRABLE INITIALLY IMMEDIATE,
+    CONSTRAINT valite_status CHECK (Status in ('En espera de revision','En revision','Proyecto','Solucionado')) NOT DEFERRABLE INITIALLY IMMEDIATE,
     CONSTRAINT Initiative_pk PRIMARY KEY (ID)
 );
 
