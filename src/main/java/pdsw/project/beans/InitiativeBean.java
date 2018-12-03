@@ -14,7 +14,7 @@ import pdsw.project.services.InitiativeBankServices;
  * @author 2099190
  */
 @SuppressWarnings("deprecation")
-@ManagedBean(name = "userBean")
+@ManagedBean(name = "initiativeBean")
 @SessionScoped
 public class InitiativeBean extends BaseBean {	
     

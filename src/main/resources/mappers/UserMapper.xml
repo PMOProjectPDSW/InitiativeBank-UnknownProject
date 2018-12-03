@@ -34,14 +34,7 @@
         SELECT *
         FROM usuario
         WHERE email = #{user_email}
-    </select>
-    
-    
-    
-    
-    
-    
-    
+    </select>    
     
     <select id='getUserByID' resultMap='UserResult'>
         SELECT

@@ -33,9 +33,9 @@ public class LoginBean extends BaseBean {
      */
     public LoginBean() {
     }
-
+    
     public void doLogin() throws InitiativeBankException {
-        boolean loginState;
+        boolean loginState;        
         try {
             loginState = initiativeBankServices.checkLogin(username, password);
             if (loginState) {

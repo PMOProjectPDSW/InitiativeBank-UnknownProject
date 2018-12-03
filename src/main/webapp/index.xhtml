@@ -11,15 +11,90 @@
     </h:head>
     <h:body>
         <div class="topHeader">
-            <img src="resources/img/Header-ECI-Logo-Labs.svg" class="imagen" />
+            <img src="resources/img/header/topHeaderImg.svg" class="image" />
         </div>
-        <br></br>
-        <div id="buttonsOptions" class="buttonsHeader">
-            <p:button outcome="index.xhtml" value="Inicio" icon="fa fa-home"/>           
-            <p:button outcome="login.xhtml" value="Usuarios" icon="fa fa-user"/>
-            <p:button outcome="index.xhtml" value="Por hacer" icon="fa fa-user"/>            
-        </div>        
 
+        <div class="topNavigation">
+            <div class="topNavigation-Center">
+                <p:button outcome="index.xhtml" value="Inicio" icon="fa fa-home"/> 
+                <p:button outcome="temp.xhtml" value="Usuarios" icon="fa fa-user"/>
+                <p:button outcome="login.xhtml" value="Login" icon="fa fa-train"/>
+                <p:button outcome="index.xhtml" value="Por hacer" icon="fa fa-folder"/>
+            </div>
+
+            <div class="topNavigation-Right">
+                <p:outputLabel value="#{loginBean.user.fullName}" />  
+                <br/>
+                <p:outputLabel value="#{loginBean.user.email}" />
+                <br/>
+                <p:outputLabel value="#{loginBean.user.rol}" />
+                <br/>                
+            </div>
+        </div>
+
+        <div class="pageHeader">
+            <img src="resources/img/pages/indexImg.svg" class="image" />
+        </div>
+        <br/>
+        <div id="sectionTools" class="optionsMenuClass">
+            <h:form id="optionsMenuForm">
+                <p:fieldset legend="Herramientas" >    <!--style="text-align: center"--> 
+                    <h:panelGrid columns="3" >
+                        <p:panel id="initiativePanel" header="Iniciativas" footer="Acá se pueden registrar nuevas iniciativas...">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/usersLogo.png" height="50%" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <ul>
+                                        <li>Primera Utilidad</li>
+                                        <li>Segunda Utilidad</li>
+                                        <li>Tercera Utilidad</li>
+                                    </ul>
+                                    <p:commandButton value="Ir a Iniciativas" actionListener="{loginBean.doLogin()}" />
+                                </p:column>
+                            </h:panelGrid>
+                        </p:panel>
+
+                        <p:panel id="emmmmmmPanel" header="Still Building" footer="Acá se pueden registrar nuevas iniciativas...">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/usersLogo.png" height="50%" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <ul>
+                                        <li>Primera Utilidad</li>
+                                        <li>Segunda Utilidad</li>
+                                        <li>Tercera Utilidad</li>
+                                    </ul>
+                                    <p:commandButton value="Ir a Iniciativas" actionListener="{loginBean.doLogin()}" />
+                                </p:column>
+                            </h:panelGrid>
+                        </p:panel>
+
+                        <p:panel id="usersPanel" header="Usuarios" footer="Acá se pueden registrar nuevas iniciativas...">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/usersLogo.png" height="50%" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <ul>
+                                        <li>Primera Utilidad</li>
+                                        <li>Segunda Utilidad</li>
+                                        <li>Tercera Utilidad</li>
+                                    </ul>
+                                    <p:commandButton value="Ir a Usuarios" actionListener="{loginBean.doLogin()}" />
+                                </p:column>
+                            </h:panelGrid>
+                        </p:panel>
+                    </h:panelGrid>  
+                </p:fieldset>
+            </h:form>            
+        </div>
+
+        <div class="footer">
+            <img src="resources/img/footer/footerImg.svg" class="image" />
+        </div>
     </h:body>    
 </html>
 

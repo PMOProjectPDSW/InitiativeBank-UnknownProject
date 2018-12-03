@@ -25,10 +25,10 @@ public class UserBean extends BaseBean {
 
     //@Inject
     private InitiativeBankServices initiativeBankServices;
-/*
+
     public UserBean() {
     }
-*/
+
     @Inject
     public void setInitiativeBankServices(InitiativeBankServices initiativeBankServices) {
         this.initiativeBankServices = initiativeBankServices;

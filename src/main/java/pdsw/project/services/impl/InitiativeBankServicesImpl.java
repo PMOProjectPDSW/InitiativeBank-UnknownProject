@@ -57,8 +57,7 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
         try {
             User user = userDAO.load(username);
             boolean loginAccess;                                  
-            if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {
-           
+            if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {         
                 loginAccess = true;
             } else {
                 loginAccess = false;

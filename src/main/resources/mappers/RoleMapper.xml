@@ -6,9 +6,9 @@
 <mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.RoleMapper">
     
     <resultMap type='Role' id='RoleResult'>
-        <!--    
-        <id property='id' column='id'/> 
-        -->
+          
+        <id property='id' column='user_id'/> 
+        
         <result property='Role' column='type'/>
     </resultMap>    
 

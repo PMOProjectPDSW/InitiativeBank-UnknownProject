@@ -11,14 +11,18 @@
     </h:head>
     <h:body>
         <div class="topHeader">
-            <img src="resources/img/Header-ECI-Logo-Labs.svg" class="imagen" />
+            <img src="resources/img/header/topHeaderImg.svg" class="image" />
+        </div>        
+        <div class="pageHeader">
+            <img src="resources/img/pages/indexImg.svg" class="image" />
         </div>
-        <h1></h1>
+        <br/>
+        
         <div id="sectionLogin" class="loginClass">
-            <h:form id="formLogin" >
+            <h:form id="loginForm" >
                 <p:growl id="growlLogin" showDetail="true" sticky="false" /> 
                 <p:fieldset legend="Iniciar Sesión" >
-                    <br></br>
+                    <br/>
                     <h:panelGrid columns="1" cellpadding="2" class="panelLoginClass">
                         <p:row>
                         <p:outputLabel value="Usuario Correo:" for="username" />
@@ -38,7 +42,11 @@
                     </h:panelGrid>                    
                 </p:fieldset>
             </h:form>
-        </div>        
+        </div> 
+        
+        <div class="footer">
+            <img src="resources/img/footer/footerImg.svg" class="image" />
+        </div>
     </h:body>    
 </html>
 
