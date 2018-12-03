@@ -13,12 +13,14 @@ import java.util.List;
 public class User implements Serializable{
     
     private long id;
-    private String fullName;
+    private String name;
     private String email;
-    private String departmentArea;
     private String password;
-    private Role rol;
+    private String area;    
+    private String role;
     private List<Initiative> iniciativas;
+    //votos
+    //comentarios
     
     public User() {
     }     
@@ -27,22 +29,22 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public User(long id, String fullName, String email, String departmentArea, String password, Role rol) {
+    public User(long id, String name, String email, String password, String area, String role) {
         this.id = id;
-        this.fullName = fullName;
+        this.name = name;
         this.email = email;
-        this.departmentArea = departmentArea;
         this.password = password;
-        this.rol = rol;
+        this.area = area;        
+        this.role = role;
     }
 
-    public User(long id, String fullName, String email, String departmentArea, String password, Role rol, List<Initiative> iniciativas) {
+    public User(long id, String name, String email, String password, String area, String role, List<Initiative> iniciativas) {
         this.id = id;
-        this.fullName = fullName;
+        this.name = name;
         this.email = email;
-        this.departmentArea = departmentArea;
         this.password = password;
-        this.rol = rol;
+        this.area = area;        
+        this.role = role;
         this.iniciativas = iniciativas;
     }
 
@@ -54,12 +56,12 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -69,15 +71,7 @@ public class User implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getDepartmentArea() {
-        return departmentArea;
-    }
-
-    public void setDepartmentArea(String departmentArea) {
-        this.departmentArea = departmentArea;
-    }
-
+    
     public String getPassword() {
         return password;
     }
@@ -86,13 +80,20 @@ public class User implements Serializable{
         this.password = password;
     }
 
-    public Role getRol() {
-        return rol;
+    public String getArea() {
+        return area;
     }
 
-    public void setRol(Role rol) {
-        this.rol = rol;
-        //this.rol = Rol.valueOf(rol);
+    public void setArea(String area) {
+        this.area = area;
+    }
+    
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public List<Initiative> getIniciativas() {
@@ -105,6 +106,6 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", fullName=" + fullName + ", email=" + email + ", departmentArea=" + departmentArea + ", password=" + password + ", rol=" + rol + ", iniciativas=" + iniciativas + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", area=" + area + ", role=" + role + ", iniciativas=" + iniciativas + '}';
     }   
 }

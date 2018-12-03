@@ -6,29 +6,34 @@
 <mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.CommentMapper">
     
     <resultMap type='Comment' id='CommentResult'>
-        <id property='id' column='id'/>
-        <result property='description' column='content'/>
-        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='user_'/>
-        <association property='iniciativa' javaType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='initiative_'/>
+        <id property='id' column='ID'/>
+        <result property='description' column='Description'/>
+        <result property='creationDate' column='CreationDate'/>
+        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='User_'/>
+        <association property='iniciativa' javaType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='Initiative_'/>
     </resultMap>
 
     <select id='getComment' resultMap='CommentResult'>
         SELECT
-            C.id                       as comment_id,
-            C.content                  as comment_description,
-            C.user_id                  as comment_usuario,
-            C.intention_id             as comment_iniciativa
-        FROM comentario as C
-        WHERE id = #{comment_id}
+            C.ID                       as Comment_ID,
+            C.Description              as Comment_Description,
+            C.CreationDate             as Comment_CreationDate
+        FROM Comment as C
+        WHERE ID = #{comment_id};
     </select>
     
     <select id='getComments' resultMap='CommentResult'>
         SELECT
-            C.id                       as comment_id,
-            C.content                  as comment_description,
-            C.user_id                  as comment_usuario,
-            C.intention_id             as comment_iniciativa
-        FROM comentario as C
+            C.ID                       as Comment_ID,
+            C.Description              as Comment_Description,
+            C.CreationDate             as Comment_CreationDate,
+            C.Users_ID                 as Comment_User_ID,
+            U.Name                     as User_Name,
+            C.Initiative_ID            as Comment_Initiative_ID,
+            I.Title                    as Initiative_Tittle
+        FROM Comment as C, Users as U, Initiative as I
+        WHERE C.Users_ID = U.ID
+        AND C.Initiative_ID = I.ID;
     </select>
     
 </mapper>

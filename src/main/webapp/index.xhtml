@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <h:outputStylesheet name="css/cssLayout.css"/>
-        <title>Banco de Iniciativas | EscuelaIng</title>
+        <title>Inicio</title>
         <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>        
     </h:head>
     <h:body>
@@ -23,11 +23,11 @@
             </div>
 
             <div class="topNavigation-Right">
-                <p:outputLabel value="#{loginBean.user.fullName}" />  
+                <p:outputLabel value="#{loginBean.user.name}" />  
                 <br/>
                 <p:outputLabel value="#{loginBean.user.email}" />
                 <br/>
-                <p:outputLabel value="#{loginBean.user.rol}" />
+                <p:outputLabel value="#{loginBean.user.role}" />
                 <br/>                
             </div>
         </div>

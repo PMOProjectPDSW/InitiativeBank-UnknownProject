@@ -3,9 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--<settings>
-        <setting name="logImpl" value="LOG4J"/>        
-    </settings>-->
     
     <properties resource="config.properties">
     </properties>
@@ -23,7 +20,7 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}" />
-                <property name="url" value="${url}"/>
+                <property name="url" value="${url}" />
                 <property name="username" value="${username}" />
                 <property name="password" value="${password}" />
 
@@ -36,7 +33,6 @@
         <mapper resource="mappers/InitiativeMapper.xml"></mapper>
         <mapper resource="mappers/CommentMapper.xml"></mapper>
         <mapper resource="mappers/VoteMapper.xml"></mapper>
-        <mapper resource="mappers/RoleMapper.xml"></mapper>
     </mappers>        
         
 </configuration>

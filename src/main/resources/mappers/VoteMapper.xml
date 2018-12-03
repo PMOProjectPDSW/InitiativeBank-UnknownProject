@@ -6,29 +6,31 @@
 <mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.VoteMapper">
     
     <resultMap type='Vote' id='VoteResult'>
-        <id property='id' column='id'/>
-        <result property='vote' column='like_dislike'/>
-        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='user_'/>
-        <association property='iniciativa' javaType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='initiative_'/>
+        <id property='id' column='ID'/>
+        <result property='vote' column='Vote'/>
+        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='User_'/>
+        <association property='iniciativa' javaType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='Initiative_'/>
     </resultMap>
 
     <select id='getVote' resultMap='VoteResult'>
         SELECT
-            V.id                       as comment_id,
-            V.like_dislike             as comment_description,
-            V.users_id                 as comment_usuario,
-            V.intention_id             as comment_iniciativa
-        FROM vote as V
-        WHERE id = #{vote_id}
+            V.ID                       as Vote_ID,
+            V.Vote                     as Vote_Vote
+        FROM Vote as V
+        WHERE ID = #{vote_id}
     </select>
     
     <select id='getVotes' resultMap='VoteResult'>
         SELECT
-            V.id                       as comment_id,
-            V.like_dislike             as comment_description,
-            V.users_id                 as comment_usuario,
-            V.intention_id             as comment_iniciativa
-        FROM vote as V
+            V.ID                       as Vote_ID,
+            V.Vote                     as Vote_Vote,
+            V.Users_ID                 as Vote_User_ID,
+            U.Name                     as User_Name,
+            V.Initiative_ID            as Vote_Initiative_ID,
+            I.Title                    as Initiative_Tittle            
+        FROM Vote as V, Users as U, Initiative as I
+        WHERE V.Users_ID = U.ID
+        AND V.Initiative_ID = I.ID;
     </select>
     
 </mapper>

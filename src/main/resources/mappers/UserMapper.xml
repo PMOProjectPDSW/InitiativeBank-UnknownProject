@@ -16,47 +16,42 @@
     -->
     
     <resultMap type='User' id='UserResult'>     
-        <id property='id' column='id'/> 
-        <result property='fullName' column='full_name'/>
-        <result property='email' column='email'/>
-        <result property='departmentArea' column='deparment_area'/>
-        <result property='password' column='pass'/>        
-        <!--
-        <result property='rol' column='t_tipos_user_id'/>        
-        -->
-        <association property='rol' javaType='Role' resultMap='pdsw.project.persistence.dao.mybatis.mappers.RoleMapper.RoleResult' columnPrefix='role_'/>
-        
-        <collection property='iniciativas' ofType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='initiative_'></collection>
-        
+        <id property='id' column='ID'/> 
+        <result property='name' column='Name'/>
+        <result property='email' column='Email'/>
+        <result property='password' column='Password'/>
+        <result property='area' column='Area'/>
+        <result property='role' column='Role'/>        
+        <collection property='iniciativas' ofType='Initiative' resultMap='pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper.InitiativeResult' columnPrefix='Initiative_'></collection>    
     </resultMap>
     
     <select id='getUserByEmail' resultMap='UserResult'>
         SELECT *
-        FROM usuario
-        WHERE email = #{user_email}
+        FROM Users
+        WHERE Email = #{user_email};
     </select>    
     
     <select id='getUserByID' resultMap='UserResult'>
         SELECT
-            U.id                    as user_id,
-            U.full_name             as user_fullName,
-            U.email                 as user_email,            
-            U.deparment_area        as user_departmentArea,
-            U.pass                  as user_password,
-            U.t_tipos_user_id       as user_rol
-        FROM usuario as U
-        WHERE id = #{user_id}
+            U.ID                    as User_ID,
+            U.Name                  as User_Name,
+            U.Email                 as User_Email,
+            U.Password              as User_Password,
+            U.Area                  as User_Area,
+            U.Role                  as User_Role
+        FROM Users as U
+        WHERE ID = #{user_id};
     </select>
     
     <select id='getUsers' resultMap='UserResult'>
         SELECT
-            U.id                    as user_id,
-            U.full_name             as user_fullName,
-            U.email                 as user_email,            
-            U.deparment_area        as user_departmentArea,
-            U.pass                  as user_password,
-            U.t_tipos_user_id       as user_rol
-        FROM usuario as U
+            U.ID                    as User_ID,
+            U.Name                  as User_Name,
+            U.Email                 as User_Email,
+            U.Password              as User_Password,
+            U.Area                  as User_Area,
+            U.Role                  as User_Role
+        FROM Users as U;
     </select>
         
     <!--<delete id="deleteAll">

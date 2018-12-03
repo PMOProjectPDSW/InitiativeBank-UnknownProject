@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface InitiativeBankServices {    
 
-    public boolean checkLogin(String username, String password) throws InitiativeBankException;
+    public boolean checkLogin(String username, String password) ;//throws InitiativeBankException;
     public User searchUser(String email) throws InitiativeBankException;
     
     

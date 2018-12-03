@@ -14,15 +14,16 @@ import java.util.Date;
 public class Initiative implements Serializable{
     
     private long id;
-    private int state;
     private String title;
     private String description;
+    private String status;    
     private Date creationDate;
+    private String field;
+    private String keyWords;
     private User usuario;
     private Tag tag;
     private List<Comment> comentarios;
-    private List<Vote> votos;    
-    //private String area;
+    private List<Vote> votos;
 
     public Initiative() {
     }
@@ -31,22 +32,26 @@ public class Initiative implements Serializable{
         this.id = id;
     }
 
-    public Initiative(long id, int state, String title, String description, Date creationDate, User usuario, Tag tag) {
+    public Initiative(long id, String title, String description, String status, Date creationDate, String field, String keyWords, User usuario, Tag tag) {
         this.id = id;
-        this.state = state;
         this.title = title;
         this.description = description;
+        this.status = status;        
         this.creationDate = creationDate;
+        this.field = field;
+        this.keyWords = keyWords;
         this.usuario = usuario;
         this.tag = tag;
     }
 
-    public Initiative(long id, int state, String title, String description, Date creationDate, User usuario, Tag tag, List<Comment> comentarios, List<Vote> votos) {
+    public Initiative(long id, String title, String description, String status, Date creationDate, String field, String keyWords, User usuario, Tag tag, List<Comment> comentarios, List<Vote> votos) {
         this.id = id;
-        this.state = state;
         this.title = title;
         this.description = description;
+        this.status = status;        
         this.creationDate = creationDate;
+        this.field = field;
+        this.keyWords = keyWords;
         this.usuario = usuario;
         this.tag = tag;
         this.comentarios = comentarios;
@@ -60,15 +65,7 @@ public class Initiative implements Serializable{
     public void setId(long id) {
         this.id = id;
     }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
+    
     public String getTitle() {
         return title;
     }
@@ -76,13 +73,21 @@ public class Initiative implements Serializable{
     public void setTitle(String title) {
         this.title = title;
     }
-
+    
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Date getCreationDate() {
@@ -92,6 +97,22 @@ public class Initiative implements Serializable{
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
+    
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    public String getKeyWords() {
+        return keyWords;
+    }
+
+    public void setKeyWords(String keyWords) {
+        this.keyWords = keyWords;
+    }  
 
     public User getUsuario() {
         return usuario;
@@ -127,7 +148,7 @@ public class Initiative implements Serializable{
 
     @Override
     public String toString() {
-        return "Initiative{" + "id=" + id + ", state=" + state + ", title=" + title + ", description=" + description + ", creationDate=" + creationDate + ", usuario=" + usuario + ", tag=" + tag + ", comentarios=" + comentarios + ", votos=" + votos + '}';
+        return "Initiative{" + "id=" + id + ", title=" + title + ", description=" + description + ", status=" + status + ", creationDate=" + creationDate + ", field=" + field + ", keyWords=" + keyWords + ", usuario=" + usuario + ", tag=" + tag + ", comentarios=" + comentarios + ", votos=" + votos + '}';
     }
     
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Tag implements Serializable {
 
     private long id;
-    private String description;
+    private String tag;
 
     public Tag() {
     }
@@ -21,9 +21,9 @@ public class Tag implements Serializable {
         this.id = id;
     }
 
-    public Tag(long id, String description) {
+    public Tag(long id, String tag) {
         this.id = id;
-        this.description = description;
+        this.tag = tag;
     }
 
     public long getId() {
@@ -34,17 +34,17 @@ public class Tag implements Serializable {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTag() {
+        return tag;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     @Override
     public String toString() {
-        return "Tag{" + "id=" + id + ", description=" + description + '}';
+        return "Tag{" + "id=" + id + ", tag=" + tag + '}';
     }
         
 }

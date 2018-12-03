@@ -6,12 +6,10 @@ import java.util.Optional;
 import org.mybatis.guice.XMLMyBatisModule;
 import pdsw.project.persistence.dao.CommentDAO;
 import pdsw.project.persistence.dao.InitiativeDAO;
-import pdsw.project.persistence.dao.RoleDAO;
 import pdsw.project.persistence.dao.UserDAO;
 import pdsw.project.persistence.dao.VoteDAO;
 import pdsw.project.persistence.dao.mybatis.MyBatisCommentDAO;
 import pdsw.project.persistence.dao.mybatis.MyBatisInitiativeDAO;
-import pdsw.project.persistence.dao.mybatis.MyBatisRoleDAO;
 import pdsw.project.persistence.dao.mybatis.MyBatisUserDAO;
 import pdsw.project.persistence.dao.mybatis.MyBatisVoteDAO;
 import pdsw.project.services.impl.InitiativeBankServicesImpl;
@@ -40,7 +38,6 @@ public class InitiativeBankServicesFactory {
                 bind(InitiativeDAO.class).to(MyBatisInitiativeDAO.class);
                 bind(CommentDAO.class).to(MyBatisCommentDAO.class);
                 bind(VoteDAO.class).to(MyBatisVoteDAO.class);
-                bind(RoleDAO.class).to(MyBatisRoleDAO.class);
             }
         });
     }

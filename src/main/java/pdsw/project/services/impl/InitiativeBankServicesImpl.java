@@ -53,10 +53,14 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
      * @throws InitiativeBankException
      */
     @Override
-    public boolean checkLogin(String username, String password) throws InitiativeBankException {
-        try {
+    public boolean checkLogin(String username, String password) {//throws InitiativeBankException {
+        //try {
             User user = userDAO.load(username);
             boolean loginAccess;                                  
+            System.out.println("----------|username|user.getEmail()|");
+            System.out.println("----------|"+username+"|"+user.getEmail()+"|");
+            System.out.println("----------|password|user.getPassword()|");
+            System.out.println("----------|"+password+"|"+user.getPassword()+"|");
             if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {         
                 loginAccess = true;
             } else {
@@ -64,10 +68,11 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
                 FacesMessage growlMessage = new FacesMessage("Inicio de Sesión Incorrecto", "El usuario no se ha autenticado correctamente.");
                 FacesContext.getCurrentInstance().addMessage(null, growlMessage);
             }
+            System.out.println("----------|loginAccess|"+loginAccess+"|");
             return loginAccess;
-        } catch (PersistenceException ex) {
-            throw new InitiativeBankException("\nERROR:\nClass: InitiativeBankServicesImpl\n-Method: checkLogin()\nNo se pudo loggear correctamente\n", ex);
-        }
+        //} catch (PersistenceException ex) {
+            //throw new InitiativeBankException("\nERROR:\nClass: InitiativeBankServicesImpl\n-Method: checkLogin()\nNo se pudo loggear correctamente\n", ex);
+        //}
     }
 
     @Override

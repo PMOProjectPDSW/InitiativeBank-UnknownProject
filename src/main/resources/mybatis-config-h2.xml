@@ -33,8 +33,6 @@
         <mapper resource="mappers/InitiativeMapper.xml"></mapper>
         <mapper resource="mappers/CommentMapper.xml"></mapper>
         <mapper resource="mappers/VoteMapper.xml"></mapper>
-        <mapper resource="mappers/RoleMapper.xml"></mapper>
-    </mappers> 
-        
+    </mappers>        
         
 </configuration>

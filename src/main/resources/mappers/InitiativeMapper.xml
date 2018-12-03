@@ -6,37 +6,47 @@
 <mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper">
     
     <resultMap type='Initiative' id='InitiativeResult'>
-        <id property='id' column='id'/>
-        <result property='state' column='state'/>  
-        <result property='title' column='title' />      
-        <result property='description' column='content'/>     
-        <result property='creationDate' column='date_of_creation'/>
-        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='user_'/>
-        <association property='tag' javaType='Tag' resultMap='pdsw.project.persistence.dao.mybatis.mappers.TagMapper.TagResult' columnPrefix='tag_'/>
-        <collection property='comentarios' ofType="Comment" resultMap='pdsw.project.persistence.dao.mybatis.mappers.CommentMapper.CommentResult' columnPrefix='comment_'></collection>        
-        <collection property='votos' ofType='Vote' resultMap='pdsw.project.persistence.dao.mybatis.mappers.VoteMapper.VoteResult' columnPrefix='vote_'></collection>
+        <id property='id' column='ID'/>
+        <result property='title' column='Title'/>
+        <result property='description' column='Description'/> 
+        <result property='status' column='Status'/>
+        <result property='creationDate' column='CreationDate'/>
+        <result property='field' column='Field'/>
+        <result property='keyWords' column='KeyWords'/>
+        <association property='usuario' javaType='User' resultMap='pdsw.project.persistence.dao.mybatis.mappers.UserMapper.UserResult' columnPrefix='User_'/>
+        <collection property='comentarios' ofType="Comment" resultMap='pdsw.project.persistence.dao.mybatis.mappers.CommentMapper.CommentResult' columnPrefix='Comment_'></collection>        
+        <collection property='votos' ofType='Vote' resultMap='pdsw.project.persistence.dao.mybatis.mappers.VoteMapper.VoteResult' columnPrefix='Vote_'></collection>
     </resultMap>
     
     <select id="getInitiatives" resultMap="InitiativeResult">
         SELECT 
-            I.id                    as initiative_id,
-            I.state                 as initiative_state,
-            I.title                 as initiative_title,
-            I.content               as initiative_description,
-            I.date_of_creation      as initiative_creationDate
-        FROM intention as I
+            I.ID                    as Initiative_ID,            
+            I.Title                 as Initiative_Title,
+            I.Description           as Initiative_Description,
+            I.Status                as Initiative_Status,
+            I.CreationDate          as Initiative_CreationDate,
+            I.Field                 as Initiative_Field,
+            I.KeyWords              as Initiative_KeyWords,
+            I.Users_ID              as Initiative_User_ID,
+            U.Name                  as User_Name,
+            U.Email                 as User_Email,
+            U.Area                  as User_Area,
+            U.Role                  as User_Role
+        FROM Initiative as I, Users as U
+        WHERE I.Users_ID = U.ID;
     </select>
     
     <select id="getInitiative" resultMap="InitiativeResult">
         SELECT
-            I.id                    as initiative_id,
-            I.state                 as initiative_state,
-            I.title                 as initiative_title,
-            I.content               as initiative_description,
-            I.date_of_creation      as initiative_creationDate,
-            I.tag                   as initiative_tag
-        FROM intention as I
-        WHERE id = #{initiative_id}
+            I.ID                    as Initiative_ID,            
+            I.Title                 as Initiative_Title,
+            I.Description           as Initiative_Description,
+            I.Status                as Initiative_Status,
+            I.CreationDate          as Initiative_CreationDate,
+            I.Field                 as Initiative_Field,
+            I.KeyWords              as Initiative_KeyWords
+        FROM Initiative as I
+        WHERE ID = #{initiative_id};
     </select>
     
     <!--

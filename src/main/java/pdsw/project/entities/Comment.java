@@ -1,6 +1,7 @@
 package pdsw.project.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Class Comment that defines all the
@@ -13,6 +14,7 @@ public class Comment implements Serializable {
 
     private long id;
     private String description;
+    private Date creationDate;
     private User usuario;
     private Initiative iniciativa;
 
@@ -23,9 +25,10 @@ public class Comment implements Serializable {
         this.id = id;
     }
 
-    public Comment(long id, String description, User usuario, Initiative iniciativa) {
+    public Comment(long id, String description, Date creationDate, User usuario, Initiative iniciativa) {
         this.id = id;
         this.description = description;
+        this.creationDate = creationDate;
         this.usuario = usuario;
         this.iniciativa = iniciativa;
     }
@@ -44,6 +47,14 @@ public class Comment implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     public User getUsuario() {
@@ -64,7 +75,7 @@ public class Comment implements Serializable {
 
     @Override
     public String toString() {
-        return "Comment{" + "id=" + id + ", description=" + description + ", usuario=" + usuario + ", iniciativa=" + iniciativa + '}';
+        return "Comment{" + "id=" + id + ", description=" + description + ", creationDate=" + creationDate + ", usuario=" + usuario + ", iniciativa=" + iniciativa + '}';
     }
 
 }
