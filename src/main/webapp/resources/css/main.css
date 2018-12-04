@@ -71,9 +71,14 @@
 }
 
 .logoImg {
-    height: 100%;
-    width: 100%;
-    height: auto;
+    /*height: 100%;
+    width: 50%;*/
+    height: 50%;
+}
+
+.parraph {
+    text-align: center;
+    text-justify: inter-word;
 }
 
 .loginClass {    
@@ -94,10 +99,6 @@
 
 .panelLoginClass {
     text-align: right;   
-}
-
-.optionsMenuClass {
-    column-rule-color: blue;
 }
 
 .optionsMenuClass fieldset{

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Usuarios</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>        
+    </h:head>
+    <h:body>
+        <div class="topHeader">
+            <img src="resources/img/header/topHeaderImg.svg" class="image" />
+        </div>
+
+        <div class="topNavigation">
+            <div class="topNavigation-Center">
+                <p:button outcome="index.xhtml" value="Inicio" icon="fa fa-home"/> 
+                <p:button outcome="iniciativas.xhtml" value="Iniciativas" icon="fa fa-lightbulb-o"/>
+                <p:button outcome="estadisticas.xhtml" value="Estadisticas" icon="fa fa-bar-chart"/>
+                <p:button outcome="usuarios.xhtml" value="Usuarios" icon="fa fa-user"/>
+                <p:button outcome="login.xhtml" value="Salir" icon="fa fa-sign-out"/>
+            </div>
+
+            <div class="topNavigation-Right">
+                <p:outputLabel value="#{loginBean.user.name}" />  
+                <br/>
+                <p:outputLabel value="#{loginBean.user.email}" />
+                <br/>
+                <p:outputLabel value="#{loginBean.user.role}" />
+                <br/>                
+            </div>
+        </div>
+
+        <div class="pageHeader">
+            <img src="resources/img/pages/initiativesImg.svg" class="image" />
+        </div>
+        <br/>
+        <div id="sectionTools" class="optionsMenuClass">
+            <h:form id="statisticsForm">
+                <p:fieldset legend="Estadisticas de Iniciativas" >
+                    <h:panelGrid columns="3" >
+                        <p:panel id="searchStatisticsPanel" header="Consultar Estadisticas">
+                            <h:panelGrid columns="2" cellpadding="0">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <p:row>
+                                        <p>Consultar Estadísticas y gráficas de las iniciativas de proyectos sjdshdjdsh hsdh sdh.</p>                                                                          
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:button outcome="index.xhtml" value="Ir a Consultar Estadísticas"/>                                     
+                                </p:column>                                
+                            </h:panelGrid>
+                        </p:panel>
+                        
+                    </h:panelGrid>  
+                </p:fieldset>
+            </h:form>            
+        </div>
+
+        <div class="footer">
+            <img src="resources/img/footer/footerImg.svg" class="image" />
+        </div>
+    </h:body>    
+</html>

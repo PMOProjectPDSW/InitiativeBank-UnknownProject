@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <h:outputStylesheet name="css/cssLayout.css"/>
-        <title>Inicio</title>
+        <title>Usuarios</title>
         <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>        
     </h:head>
     <h:body>
@@ -34,80 +34,77 @@
         </div>
 
         <div class="pageHeader">
-            <img src="resources/img/pages/indexImg.svg" class="image" />
+            <img src="resources/img/pages/initiativesImg.svg" class="image" />
         </div>
         <br/>
         <div id="sectionTools" class="optionsMenuClass">
-            <h:form id="optionsMenuForm">
-                <p:fieldset legend="Herramientas" >
+            <h:form id="initiativesForm">
+                <p:fieldset legend="Opciones de Iniciativa" >
                     <h:panelGrid columns="3" >
-                        <p:panel id="initiativePanel" header="Iniciativas">
+                        <p:panel id="searchInitiativePanel" header="Consultar Iniciativas">
                             <h:panelGrid columns="2" cellpadding="0">
-                                <a href="iniciativas.xhtml">
+                                <a href="temp.xhtml">
                                     <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
-                                    </p:row>
-                                    <br/>
                                     <p:row>
-                                        <a href="index.xhtml">- Consultar Iniciativas</a>                                          
-                                    </p:row>
-                                    <br/>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="modificarIniciativa.xhtml">- Modificar Iniciativa</a>                                            
-                                    </p:row>
-                                    <br/>
-                                    <p:row rendered="#{loginBean.user.role == 'Administrador' || loginBean.user.role == 'Personal PMO - ODI'}">
-                                        <a href="actualizarEstadoIniciativa.xhtml">- Actualizar Estado de Iniciativa</a>                                            
+                                        <p class ="parraph">Consultar Iniciativas por Palabras Clave</p>                                                                          
                                     </p:row>
                                     <br/>
                                     <br/>
-                                    <p:button outcome="iniciativas.xhtml" value="Ir a Iniciativas"/>                                     
+                                    <p:button outcome="index.xhtml" value="Ir a Consultar Iniciativas"/>                                     
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>
-
-                        <p:panel id="statisticPanel" header="Estadísticas">
+                        
+                        <p:panel id="updateInitiativePanel" header="Actualizar Estado de Iniciativa">
                             <h:panelGrid columns="2" cellpadding="0">
-                                <a href="estadisticas.xhtml">
+                                <a href="temp.xhtml">
                                     <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
-                                    </p:row>
-                                    <br/>
                                     <p:row>
-                                        <a href="index.xhtml">- Consultar Estadisticas</a>                                          
+                                        <p class ="parraph">Actualizar el estado de una Iniciativa existente, dependiendo del estado en que se encuentre</p>                                        
                                     </p:row>
                                     <br/>
                                     <br/>
-                                    <p:button outcome="estadisticas.xhtml" value="Ir a Estadísticas"/>                                     
+                                    <p:button outcome="index.xhtml" value="Ir a Actualizar Estado Iniciativa"/>                                     
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>
-
-                        <p:panel id="usersPanel" header="Usuarios">
+                        
+                        <p:panel id="addInitiativePanel" header="Registrar Iniciativa">
                             <h:panelGrid columns="2" cellpadding="0">
-                                <a href="usuarios.xhtml">
-                                    <img src="resources/img/tools/usersLogo.png" class="logoImg"/>
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="registrarIniciativa.xhtml">- Registrar Usuario</a>                                           
-                                    </p:row>
-                                    <br/>
                                     <p:row>
-                                        <a href="index.xhtml">- Consultar Usuarios</a>                                          
+                                        <p>Registrar una nueva Iniciativa de proyecto para la Escuela</p>
                                     </p:row>
                                     <br/>
                                     <br/>
-                                    <p:button outcome="usuarios.xhtml" value="Ir a Usuarios"/>                                     
+                                    <p:button outcome="index.xhtml" value="Ir a Registrar Iniciativa"/>                                     
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>
+                        
+                        <p:panel id="editInitiativePanel" header="Modificar Iniciativa">
+                            <h:panelGrid columns="2" cellpadding="0">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <p:row>
+                                        <p>Modificar o Editar una Iniciativa existente</p>                                        
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:button outcome="index.xhtml" value="Ir a Modificar Iniciativa"/>                                     
+                                </p:column>                                
+                            </h:panelGrid>
+                        </p:panel>
+                        
                     </h:panelGrid>  
                 </p:fieldset>
             </h:form>            
