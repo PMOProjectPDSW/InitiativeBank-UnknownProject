@@ -27,16 +27,17 @@
 .topNavigation button{
     float: left;
     text-align: center;
-    padding: 0px 45px;
+    padding: 0px 0px;
     text-decoration: none;
     font-size: 17px;
 }
-/*
+
 .topNavigation button:hover {
     background-color: #ddd;
     color: black;
+    font-weight: bold;
 }
-*/
+
 .topNavigation-Center {
     float: left;
     position: absolute;
@@ -70,6 +71,7 @@
 }
 
 .logoImg {
+    height: 100%;
     width: 100%;
     height: auto;
 }
@@ -93,20 +95,53 @@
 .panelLoginClass {
     text-align: right;   
 }
-/*
+
 .optionsMenuClass {
+    column-rule-color: blue;
+}
+
+.optionsMenuClass fieldset{
     margin: auto;
     vertical-align: middle;
     width: fit-content;
     text-align: center;
-    *//*margin-bottom:2000px;*/ /*
-}*/
-/*
-.optionsMenuClass button{
+    /*margin-bottom:2000px;*/
+}
+
+.optionsMenuClass button{ 
     float: right;
     text-align: center;
-    padding: 50px 45px;
+    padding: 0px 0px;
     text-decoration: none;
-    font-size: 8px;
+    font-size: 17px;
 }
-*/
+
+
+
+
+
+a {
+    margin: auto;
+    vertical-align: middle;
+    width: fit-content;
+    text-align: center;
+    /*font-size: 15px;*/
+}
+
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}

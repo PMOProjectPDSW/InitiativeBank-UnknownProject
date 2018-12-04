@@ -38,25 +38,65 @@
         <br/>
         <div id="sectionTools" class="optionsMenuClass">
             <h:form id="optionsMenuForm">
-                <p:fieldset legend="Herramientas" >    <!--style="text-align: center"--> 
+                <p:fieldset legend="Herramientas" >
                     <h:panelGrid columns="3" >
                         <p:panel id="initiativePanel" header="Iniciativas" footer="Acá se pueden registrar nuevas iniciativas...">
                             <h:panelGrid columns="2" cellpadding="10">
                                 <a href="temp.xhtml">
-                                    <img src="resources/img/tools/usersLogo.png" height="50%" class="logoImg"/>
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <ul>
-                                        <li>Primera Utilidad</li>
-                                        <li>Segunda Utilidad</li>
-                                        <li>Tercera Utilidad</li>
-                                    </ul>
-                                    <p:commandButton value="Ir a Iniciativas" actionListener="{loginBean.doLogin()}" />
-                                </p:column>
+                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                        <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
+                                    </p:row>
+                                    <br/>
+                                    <p:row>
+                                        <a href="index.xhtml">- Consultar Iniciativas</a>                                          
+                                    </p:row>
+                                    <br/>
+                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                        <a href="modificarIniciativa.xhtml">- Modificar Iniciativa</a>                                            
+                                    </p:row>
+                                    <br/>
+                                    <p:row rendered="#{loginBean.user.role == 'Administrador' || loginBean.user.role == 'Personal PMO - ODI'}">
+                                        <a href="actualizarEstadoIniciativa.xhtml">- Actualizar Estado de Iniciativa</a>                                            
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:button outcome="index.xhtml" value="Ir a Iniciativas"/>                                     
+                                </p:column>                                
                             </h:panelGrid>
                         </p:panel>
 
-                        <p:panel id="emmmmmmPanel" header="Still Building" footer="Acá se pueden registrar nuevas iniciativas...">
+                        <p:panel id="initiativePanel" header="Iniciativas" footer="Acá se pueden registrar nuevas iniciativas...">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <a href="temp.xhtml">
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                        <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
+                                    </p:row>
+                                    <br/>
+                                    <p:row>
+                                        <a href="index.xhtml">- Consultar Iniciativas</a>                                          
+                                    </p:row>
+                                    <br/>
+                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                        <a href="modificarIniciativa.xhtml">- Modificar Iniciativa</a>                                            
+                                    </p:row>
+                                    <br/>
+                                    <p:row rendered="#{loginBean.user.role == 'Administrador' || loginBean.user.role == 'Personal PMO - ODI'}">
+                                        <a href="actualizarEstadoIniciativa.xhtml">- Actualizar Estado de Iniciativa</a>                                            
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:button outcome="index.xhtml" value="Ir a Iniciativas"/>                                     
+                                </p:column>                                
+                            </h:panelGrid>
+                        </p:panel>
+
+                        <p:panel id="emmmmmmPanel" header="Estadísticas" footer="Acá se pueden registrar nuevas iniciativas...">
                             <h:panelGrid columns="2" cellpadding="10">
                                 <a href="temp.xhtml">
                                     <img src="resources/img/tools/usersLogo.png" height="50%" class="logoImg"/>
@@ -67,7 +107,7 @@
                                         <li>Segunda Utilidad</li>
                                         <li>Tercera Utilidad</li>
                                     </ul>
-                                    <p:commandButton value="Ir a Iniciativas" actionListener="{loginBean.doLogin()}" />
+                                    <p:commandButton value="Ir a Estadísticas" actionListener="{loginBean.doLogin()}" />
                                 </p:column>
                             </h:panelGrid>
                         </p:panel>
@@ -81,7 +121,7 @@
                                     <ul>
                                         <li>Primera Utilidad</li>
                                         <li>Segunda Utilidad</li>
-                                        <li>Tercera Utilidad</li>
+                                        <li>Cambiar Perfil de Usuario</li>
                                     </ul>
                                     <p:commandButton value="Ir a Usuarios" actionListener="{loginBean.doLogin()}" />
                                 </p:column>
