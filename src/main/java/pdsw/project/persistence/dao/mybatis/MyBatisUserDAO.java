@@ -28,6 +28,17 @@ public class MyBatisUserDAO implements UserDAO{
         }
     }
     
+    @Override
+    public List<User> loadAll() throws PersistenceException {
+        try {   
+            return userMapper.getUsers();           
+        } catch (Exception ex) {
+            throw new PersistenceException("\nERROR MyBATIS:\nNo se pudieron cargar todos los usuarios: \n", ex);
+        }
+    }
+    
+    
+    
     
     
     
@@ -50,14 +61,7 @@ public class MyBatisUserDAO implements UserDAO{
         }
     }
 
-    @Override
-    public List<User> loadAll() throws PersistenceException {
-        try {         
-            return userMapper.getUsers();           
-        } catch (Exception ex) {
-            throw new PersistenceException("\nERROR MyBATIS:\nNo se pudieron cargar todos los usuarios: \n", ex);
-        }
-    }
+    
 
     @Override
     public void update(User user) throws PersistenceException {

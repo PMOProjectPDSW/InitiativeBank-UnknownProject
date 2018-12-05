@@ -43,6 +43,7 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     /*
     System.out.println("----------|username|user.getEmail()|");
     System.out.println("----------|"+username+"|"+user.getEmail()+"|"); 
+    System.out.println("\n\n\n----------|loginAccess|\n"+loginAccess+"\n\n\n");
     */
 
     /**
@@ -53,27 +54,41 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
      * @throws InitiativeBankException
      */
     @Override
-    public boolean checkLogin(String username, String password) {//throws InitiativeBankException {
-        //try {
+    public boolean checkLogin(String username, String password) throws InitiativeBankException {
+        try {
             User user = userDAO.load(username);
-            boolean loginAccess;                                  
-            System.out.println("----------|username|user.getEmail()|");
-            System.out.println("----------|"+username+"|"+user.getEmail()+"|");
-            System.out.println("----------|password|user.getPassword()|");
-            System.out.println("----------|"+password+"|"+user.getPassword()+"|");
+            boolean loginAccess;                     
             if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {         
                 loginAccess = true;
             } else {
                 loginAccess = false;
                 FacesMessage growlMessage = new FacesMessage("Inicio de Sesión Incorrecto", "El usuario no se ha autenticado correctamente.");
                 FacesContext.getCurrentInstance().addMessage(null, growlMessage);
-            }
-            System.out.println("----------|loginAccess|"+loginAccess+"|");
+            }            
             return loginAccess;
-        //} catch (PersistenceException ex) {
-            //throw new InitiativeBankException("\nERROR:\nClass: InitiativeBankServicesImpl\n-Method: checkLogin()\nNo se pudo loggear correctamente\n", ex);
-        //}
+        } catch (PersistenceException ex) {
+            throw new InitiativeBankException("\nERROR:\nClass: InitiativeBankServicesImpl\n-Method: checkLogin()\nNo se pudo loggear correctamente\n", ex);
+        }
     }
+    
+    @Override
+    public List<User> searchUsers() throws InitiativeBankException {
+        //List<User> users;
+        try {
+            return userDAO.loadAll();
+        } catch (PersistenceException ex) {
+            throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     @Override
     public User searchUser(String email) throws InitiativeBankException {
@@ -90,17 +105,6 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
             return userDAO.load(id);
         } catch (PersistenceException ex) {
             throw new InitiativeBankException("\nERROR:\nNo se pudo encontrar al Usuario", ex);
-        }
-    }
-
-    @Override
-    public List<User> searchUsers() throws InitiativeBankException {
-        List<User> users;
-        try {
-            users = userDAO.loadAll();
-            return userDAO.loadAll();
-        } catch (PersistenceException ex) {
-            throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
 

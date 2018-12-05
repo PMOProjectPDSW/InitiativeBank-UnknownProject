@@ -15,14 +15,14 @@ import pdsw.project.entities.User;
 public interface UserDAO {
     
     public User load(String email) throws PersistenceException;
-    
+    public List<User> loadAll() throws PersistenceException;
     
     
     
     public void save(User user) throws PersistenceException;
     //Change mail to ID
     public User load(long id) throws PersistenceException;
-    public List<User> loadAll() throws PersistenceException;
+    
     public void update(User user) throws PersistenceException;
     
 }

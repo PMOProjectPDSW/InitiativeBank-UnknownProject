@@ -43,15 +43,17 @@
         WHERE ID = #{user_id};
     </select>
     
-    <select id='getUsers' resultMap='UserResult'>
-        SELECT
+    <select id='getUsers' parameterType="User" resultMap='UserResult'>
+        <!--SELECT
             U.ID                    as User_ID,
             U.Name                  as User_Name,
             U.Email                 as User_Email,
             U.Password              as User_Password,
             U.Area                  as User_Area,
             U.Role                  as User_Role
-        FROM Users as U;
+        FROM Users as U;-->
+        SELECT *
+        FROM Users;
     </select>
         
     <!--<delete id="deleteAll">

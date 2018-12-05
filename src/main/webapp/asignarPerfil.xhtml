@@ -37,33 +37,44 @@
             <img src="resources/img/pages/usersImg.svg" class="image" />
         </div>
         <br/>
-        <div id="sectionTools" class="optionsMenuClass">
-            <h:form id="usersForm">
-                <p:fieldset legend="Opciones de Usuario" >
-                    <h:panelGrid columns="3" >
-                        <p:panel id="asignProfilePanel" rendered="#{loginBean.user.role == 'Administrador'}" header="Asignar Perfil a Usuario">
-                            <h:panelGrid columns="2" cellpadding="0">
-                                <a href="asignarPerfil.xhtml">
-                                    <img src="resources/img/tools/usersLogo.png" class="logoImg"/>
-                                </a>
-                                <p:column>
-                                    <p:row>
-                                        <p>Asignar o Cambiar el tipo de perfil de un Usuario.</p>                                                                          
-                                    </p:row>
-                                    <br/>
-                                    <br/>
-                                    <p:commandButton value="Ir a Asignar Perfil" actionListener="#{usersBean.searchUsers()}" /> 
-                                    <!--<p:button outcome="asignarPerfil.xhtml" value="Ir a Asignar Perfil"/>   -->                                  
-                                </p:column>                                
-                            </h:panelGrid>
-                        </p:panel>
-                        
-                    </h:panelGrid>  
+        <div id="asignProfile" class="asignProfileClass">
+            <h:form id="asignProfileForm">
+                <p:fieldset legend="Asignar Perfil a Usuarios" >
                 </p:fieldset>
+
+
+                <p:dataTable id="searchUsersTable" var="user" value="#{usersBean.users}" selectionMode="single" selection="#{usersBean.selectedUser}" rowKey="#{user.id}">
+                    <f:facet name="header">
+                        Usuarios
+                    </f:facet>
+                    <p:column headerText="Documento">
+                        <h:outputText value="#{user.id}" />
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{user.name}" />
+                    </p:column>
+                    <p:column headerText="Correo">
+                        <h:outputText value="#{user.email}" />
+                    </p:column>
+                    <p:column headerText="Area">
+                        <h:outputText value="#{user.area}" />
+                    </p:column>
+                    <p:column headerText="Rol">
+                        <h:outputText value="#{user.role}" />
+                    </p:column>
+
+                    <f:facet name="footer">
+                        <p:commandButton process="searchUsersTable" update="asignProfileForm" icon="fa fa-repeat" value="Cambiar Perfil" oncomplete="PF('searchUsersTable').show()"/>
+                    </f:facet>
+
+
+                </p:dataTable>
+
+
             </h:form>            
         </div>
-
-        <div class="footer">
+        <br/>
+        <div class="footerLarge">
             <img src="resources/img/footer/footerImg.svg" class="image" />
         </div>
     </h:body>    

@@ -16,7 +16,7 @@ import pdsw.project.services.InitiativeBankServices;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "initiativeBean")
 @SessionScoped
-public class InitiativeBean extends BaseBean {	
+public class InitiativesBean extends BaseBean {	
     
     private String mail;
     private String password;
@@ -26,14 +26,14 @@ public class InitiativeBean extends BaseBean {
     @Inject
     private InitiativeBankServices initiativeBankServices;
 
-    public InitiativeBean() {
+    public InitiativesBean() {
     }
 
     public User searchUser(long id) {
         try {
             user = initiativeBankServices.searchUser(id);           
         } catch (Exception ex) {
-            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InitiativesBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         return user;
     }
@@ -45,7 +45,7 @@ public class InitiativeBean extends BaseBean {
             System.out.println("DONE: searchUsers Bean");
             System.out.println(users.toString());
         } catch (Exception ex) {
-            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InitiativesBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         return users;
     }

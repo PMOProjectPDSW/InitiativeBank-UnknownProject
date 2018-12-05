@@ -13,16 +13,16 @@ import java.util.List;
  */
 public interface InitiativeBankServices {    
 
-    public boolean checkLogin(String username, String password) ;//throws InitiativeBankException;
+    public boolean checkLogin(String username, String password) throws InitiativeBankException;
     public User searchUser(String email) throws InitiativeBankException;
-    
+    public List<User> searchUsers() throws InitiativeBankException;
     
     
     
     
     
     public User searchUser(long id) throws InitiativeBankException;
-    public List<User> searchUsers() throws InitiativeBankException;
+    
     ////////
     public Initiative searchInitiative(long id) throws InitiativeBankException;
     public List<Initiative> searchInitiatives() throws InitiativeBankException;

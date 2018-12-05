@@ -3,10 +3,13 @@ package pdsw.project.beans;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import pdsw.project.entities.User;
+import pdsw.project.services.InitiativeBankException;
 import pdsw.project.services.InitiativeBankServices;
 
 /**
@@ -14,41 +17,49 @@ import pdsw.project.services.InitiativeBankServices;
  * @author 2099190
  */
 @SuppressWarnings("deprecation")
-@ManagedBean(name = "userBean")
+@ManagedBean(name = "usersBean")
 @SessionScoped
-public class UserBean extends BaseBean {
+public class UsersBean extends BaseBean {
 
-    private String mail;
-    private String password;
-    private User user;
-    private List<User> users = null;
-
-    //@Inject
-    private InitiativeBankServices initiativeBankServices;
-
-    public UserBean() {
-    }
+    /*private String mail;
+    private String password;*/
+    private List<User> users;
+    private User selectedUser;
 
     @Inject
-    public void setInitiativeBankServices(InitiativeBankServices initiativeBankServices) {
-        this.initiativeBankServices = initiativeBankServices;
+    private InitiativeBankServices initiativeBankServices;
+
+    public UsersBean() {
     }
 
+    public void searchUsers() {
+        try {
+            users = initiativeBankServices.searchUsers();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("asignarPerfil.xhtml");
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    
+
+    /*
     public User searchUser(long id) {
         try {
             user = initiativeBankServices.searchUser(id);
         } catch (Exception ex) {
-            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         return user;
-    }
-
-    public List<User> searchUsers() {
+    }*/
+    public List<User> searchhhhUsers() {
         try {
             users = initiativeBankServices.searchUsers();
             //System.out.println(users.toString());
         } catch (Exception ex) {
-            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
         }
         return users;
     }
@@ -68,22 +79,20 @@ public class UserBean extends BaseBean {
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }*/
-
-    public String getMail() {
-        return mail;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setMail(String mail) {
-        System.out.println(mail);
-        this.mail = mail;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
-    public String getPassword() {
-        return password;
+    public User getSelectedUser() {
+        return selectedUser;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setSelectedUser(User selectedUser) {
+        this.selectedUser = selectedUser;
     }
 
 }

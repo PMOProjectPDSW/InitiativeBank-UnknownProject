@@ -10,7 +10,7 @@
     <name>InitiativeBank-PDSWProject</name>
 
     <properties>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <!--<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -142,9 +142,11 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!--
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
+                    -->
                 </configuration>
             </plugin>
             <plugin>
