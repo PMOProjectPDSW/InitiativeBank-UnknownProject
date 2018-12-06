@@ -80,7 +80,7 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
-    
+
     @Override
     public User searchUser(String email) throws InitiativeBankException {
         try {
@@ -98,22 +98,17 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
-    
+
     @Override
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
         initiativeDAO.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public List<Initiative> searchInitiatives() {
+        return initiativeDAO.loadAll();
+
+    }
 
     @Override
     public User searchUser(long id) throws InitiativeBankException {
@@ -133,16 +128,6 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
         }
     }
 
-    @Override
-    public List<Initiative> searchInitiatives() throws InitiativeBankException {
-        try {
-            return initiativeDAO.loadAll();
-        } catch (PersistenceException ex) {
-            throw new InitiativeBankException("ERROR:\nNo se pudo encontrar la Iniciativa", ex);
-        }
-    }
-
     //Insertar Usuario
     //Insertar Iniciativa
-
 }

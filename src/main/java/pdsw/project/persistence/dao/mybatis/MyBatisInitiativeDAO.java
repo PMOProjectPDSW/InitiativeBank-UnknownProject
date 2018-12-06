@@ -9,48 +9,44 @@ import pdsw.project.persistence.dao.InitiativeDAO;
 import pdsw.project.persistence.dao.mybatis.mappers.InitiativeMapper;
 
 /**
- * Class MyBatisInitiativeDAO that implements all the
- * functionalities related with a Initiative
+ * Class MyBatisInitiativeDAO that implements all the functionalities related
+ * with a Initiative
+ *
  * @author Pedro Mayorga - PeNav
  * @version 1.0
  * @since 2018-11-23
  */
-public class MyBatisInitiativeDAO implements InitiativeDAO{
-    
+public class MyBatisInitiativeDAO implements InitiativeDAO {
+
     @Inject
     private InitiativeMapper initiativeMapper;
-    
+
     @Override
     public Initiative load(long id) throws PersistenceException {
         try {
             return initiativeMapper.getInitiative(id);
         } catch (Exception ex) {
             throw new PersistenceException("ERROR MyBATIS:\nNo se pudieron mostrar todas las Iniciativas.", ex);
-        }  
+        }
     }
-    
+
     @Override
-    public List<Initiative> loadAll() throws PersistenceException {
-        try {
-            return initiativeMapper.getInitiatives();
-        } catch (Exception ex) {
-            throw new PersistenceException("ERROR MyBATIS:\nNo se pudieron mostrar todas las Iniciativas.", ex);
-        }              
+    public List<Initiative> loadAll() {
+
+        return initiativeMapper.getInitiatives();
+
     }
-    
+
     @Override
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
         initiativeMapper.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
     }
-    
-    
-    
+
     /*
     @Override
     public void save (Intention inten) throws PersistenceException{
     	System.out.println(inten);
     	intentionMapper.addIntention(inten);        
     }
-    */
- 
+     */
 }

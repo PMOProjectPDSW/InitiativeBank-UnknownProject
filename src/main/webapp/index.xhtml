@@ -52,7 +52,7 @@
                                         <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
                                     </p:row>
                                     <br/>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                    <p:row rendered="#{loginBean.user.role == 'Usuarios de consulta'}">
                                         <a href="consultarIniciativas.xhtml">- Consultar Iniciativas</a>                                            
                                     </p:row>
                                     <br/>

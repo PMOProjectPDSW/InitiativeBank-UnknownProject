@@ -39,13 +39,12 @@ public class InitiativesBean extends BaseBean {
     private long user_id;
     private long tag_id;
     private List<Initiative> initiatives;
+    private List<User> filteredInitiatives;
     private List<String> statuses = Arrays.asList("En espera de revision", "En revision", "Proyecto", "Solucionado");
 
     @Inject
     private InitiativeBankServices initiativeBankServices;
 
-    //@Inject
-    //public LoginBean loginBean;
     public InitiativesBean() {
     }
 
@@ -68,6 +67,16 @@ public class InitiativesBean extends BaseBean {
         FacesContext.getCurrentInstance().addMessage(null, growlMessage);
 
     }
+    
+    public void searchInitiatives() {
+        try {
+            initiatives = initiativeBankServices.searchInitiatives();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("consultarIniciativas.xhtml");
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
     public String getTitle() {
         return title;
@@ -133,6 +142,14 @@ public class InitiativesBean extends BaseBean {
         this.initiatives = initiatives;
     }
 
+    public List<User> getFilteredInitiatives() {
+        return filteredInitiatives;
+    }
+
+    public void setFilteredInitiatives(List<User> filteredInitiatives) {
+        this.filteredInitiatives = filteredInitiatives;
+    }
+    
     public List<String> getStatuses() {
         return statuses;
     }

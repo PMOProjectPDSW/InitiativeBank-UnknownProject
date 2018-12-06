@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Iniciativas | Consultar Iniciativas</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>   
+        <link rel="icon" type="image/png" href="resources/img/tools/InitiativeBankLogo.png"/>
+    </h:head>
+    <h:body>
+        <div class="topHeader">
+            <img src="resources/img/header/topHeaderImg.svg" class="image" />
+        </div>
+
+        <div class="topNavigation">
+            <div class="topNavigation-Center">
+                <p:button outcome="index.xhtml" value="Inicio" icon="fa fa-home"/> 
+                <p:button outcome="iniciativas.xhtml" value="Iniciativas" icon="fa fa-lightbulb-o"/>
+                <p:button outcome="estadisticas.xhtml" value="Estadisticas" icon="fa fa-bar-chart"/>
+                <p:button outcome="usuarios.xhtml" value="Usuarios" icon="fa fa-user"/>
+                <p:commandButton value="Salir" icon="fa fa-sign-out" actionListener="#{loginBean.logOut()}" />
+            </div>
+
+            <div class="topNavigation-Right">
+                <p:outputLabel value="#{loginBean.user.name}" />  
+                <br/>
+                <p:outputLabel value="#{loginBean.user.email}" />
+                <br/>
+                <p:outputLabel value="#{loginBean.user.role}" />
+                <br/>                
+            </div>
+        </div>
+
+        <div class="pageHeader">
+            <img src="resources/img/pages/asignProfileHeader.svg" class="image" />
+        </div>
+        <br/>
+        <div id="consultInitiativesDiv" class="asignProfileClass">
+            <h:form id="consultInitiativesForm">                
+                <p:growl id="growlConsultInitiatives" showDetail="true" sticky="false" />                
+                <p:fieldset legend="Consultar Iniciativas" >
+                    <p>En la tabla de abajo puede consultar todas las Iniciativas que se encuentran registradas.</p>
+
+                </p:fieldset>
+
+                <p:dataTable id="searchInitiativesTable" var="initiative" value="#{initiativesBean.initiatives}" widgetVar="initiativesTable" selectionMode="single" selection="#{initiativesBean.selectedInitiative}" rowKey="#{initiative.id}" filteredValue="#{initiativesBean.filteredInitiatives}" stickyHeader="true">
+                    <f:facet name="header">
+                        <p>Iniciativas</p>
+                    </f:facet>
+                    <p:column headerText="ID" sortBy="#{initiative.id}" filterBy="#{initiative.id}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.id}" />
+                    </p:column>
+                    <p:column headerText="Título" sortBy="#{initiative.title}" filterBy="#{initiative.title}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.title}" />
+                    </p:column>
+                    <p:column headerText="Descripción" sortBy="#{initiative.description}" filterBy="#{initiative.description}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.description}" />
+                    </p:column>                    
+                    <p:column headerText="Estado" sortBy="#{initiative.status}" filterBy="#{initiative.status}" filterMatchMode="exact">
+                        <f:facet name="filter">
+                            <p:selectOneMenu onchange="PF('initiativesTable').filter()" >
+                                <f:selectItem itemLabel="Seleccionar Estado" itemValue="#{null}" noSelectionOption="true" />
+                                <f:selectItems value="#{initiativesBean.statuses}" />
+                            </p:selectOneMenu>
+                        </f:facet>
+                        <h:outputText value="#{initiative.status}" />
+                    </p:column>
+                    <p:column headerText="Fecha de Creación" sortBy="#{initiative.creationDate}" filterBy="#{initiative.creationDate}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.creationDate}" />
+                    </p:column>
+                    <p:column headerText="Campo" sortBy="#{initiative.field}" filterBy="#{initiative.field}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.field}" />
+                    </p:column>
+                    <p:column headerText="Palabras Clave" sortBy="#{initiative.keyWords}" filterBy="#{initiative.keyWords}" filterMatchMode="contains">
+                        <h:outputText value="#{initiative.keyWords}" />
+                    </p:column>
+                    <f:facet name="footer">                        
+                        <p>En total hay #{initiativesBean.initiatives.size()} Iniciativas.</p>
+                    </f:facet>
+                </p:dataTable>
+
+
+            </h:form>            
+        </div>
+        <br/>
+        <div class="footerLarge">
+            <img src="resources/img/footer/footerImg.svg" class="image" />
+        </div>
+    </h:body>    
+</html>

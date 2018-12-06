@@ -58,9 +58,9 @@
                             </h:panelGrid>
                         </p:panel>
                         
-                        <p:panel id="searchInitiativePanel" header="Consultar Iniciativas">
+                        <p:panel id="searchInitiativePanel" rendered="#{loginBean.user.role == 'Usuarios de consulta'}" header="Consultar Iniciativas">
                             <h:panelGrid columns="2" cellpadding="0">
-                                <a href="asignarPerfil.xhtml">
+                                <a href="consultarIniciativas.xhtml">
                                     <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
@@ -69,7 +69,7 @@
                                     </p:row>
                                     <br/>
                                     <br/>
-                                    <p:button outcome="index.xhtml" value="Ir a Consultar Iniciativas"/>                                     
+                                    <p:commandButton value="Ir a Consultar Iniciativas" actionListener="#{initiativesBean.searchInitiatives()}" />
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>
