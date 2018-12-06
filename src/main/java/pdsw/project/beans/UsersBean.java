@@ -52,8 +52,12 @@ public class UsersBean extends BaseBean {
                 FacesContext.getCurrentInstance().addMessage(null, growlMessage);
             } else {
                 initiativeBankServices.changeRole(selectedUser.getId(), newRole);
-                selectedUser.setRole(newRole);                
-                FacesContext.getCurrentInstance().getExternalContext().redirect("asignarPerfil.xhtml");               
+                selectedUser.setRole(newRole);               
+                
+                newRole = "";
+                FacesMessage growlMessage = new FacesMessage("Cambio de Rol Exitoso", "El Usuario cambió de Rol correctamente");
+                FacesContext.getCurrentInstance().addMessage(null, growlMessage);
+                //FacesContext.getCurrentInstance().getExternalContext().redirect("asignarPerfil.xhtml");               
             }
         } catch (Exception ex) {
             Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);

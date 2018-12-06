@@ -45,7 +45,7 @@
                         <p:panel id="addInitiativePanel" rendered="#{loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}" header="Registrar Iniciativa">
                             <h:panelGrid columns="2" cellpadding="0">
                                 <a href="registrarIniciativa.xhtml">
-                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                    <img src="resources/img/tools/registerInitiativeLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
                                     <p:row>
@@ -61,7 +61,7 @@
                         <p:panel id="searchInitiativePanel" rendered="#{loginBean.user.role == 'Usuarios de consulta'}" header="Consultar Iniciativas">
                             <h:panelGrid columns="2" cellpadding="0">
                                 <a href="consultarIniciativas.xhtml">
-                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                    <img src="resources/img/tools/consultInitiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
                                     <p:row>
@@ -74,10 +74,10 @@
                             </h:panelGrid>
                         </p:panel>
                         
-                        <p:panel id="updateInitiativePanel" header="Actualizar Estado de Iniciativa">
+                        <p:panel id="updateInitiativePanel" rendered="#{loginBean.user.role == 'Administrador'}" header="Modificar Estado de Iniciativa">
                             <h:panelGrid columns="2" cellpadding="0">
-                                <a href="asignarPerfil.xhtml">
-                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                <a href="modificarEstadoIniciativa.xhtml">
+                                    <img src="resources/img/tools/modifyInitiativeStateLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
                                     <p:row>
@@ -85,7 +85,7 @@
                                     </p:row>
                                     <br/>
                                     <br/>
-                                    <p:button outcome="index.xhtml" value="Ir a Actualizar Estado Iniciativa"/>                                     
+                                    <p:commandButton value="Ir a Modificar Estado Iniciativa" actionListener="#{initiativesBean.searchInitiativesStatus()}" />                                   
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>  

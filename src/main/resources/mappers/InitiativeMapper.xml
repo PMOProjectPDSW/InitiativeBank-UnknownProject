@@ -47,5 +47,11 @@
         VALUES(#{initiative_title}, #{initiative_description}, #{initiative_status}, #{initiative_creationdate}, #{initiative_field}, string_to_array(#{initiative_keyWords},','), #{initiative_user_id}, #{initiative_tag_id});   	
     </insert>
     
+    <update id="updateStatus" parameterType="map">
+        UPDATE Initiative
+        SET Status = #{initiative_status}
+        WHERE ID = #{initiative_id};        
+    </update>
+    
   </mapper>
 

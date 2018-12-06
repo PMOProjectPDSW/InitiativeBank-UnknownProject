@@ -18,11 +18,13 @@ public interface InitiativeDAO {
     public Initiative load(long id) throws PersistenceException;
     public List<Initiative> loadAll();
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id);
-
+    public void updateStatus(long id, String newStatus);
     
     
     //implement
     //public void save(Initiative initia) throws PersistenceException;
+
+    
 
         
 }

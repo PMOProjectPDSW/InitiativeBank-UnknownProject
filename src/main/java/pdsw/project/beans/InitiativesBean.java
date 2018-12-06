@@ -57,17 +57,17 @@ public class InitiativesBean extends BaseBean {
         newStatus = "En espera de revision";
         user_id = loginBean.getUser().getId();
         tag_id = 1;
-        
+
         initiativeBankServices.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
         title = "";
         description = "";
         field = "";
-        keyWords = "";        
+        keyWords = "";
         FacesMessage growlMessage = new FacesMessage("Registro Exitoso", "La Iniciativa se Registró correctamente");
         FacesContext.getCurrentInstance().addMessage(null, growlMessage);
 
     }
-    
+
     public void searchInitiatives() {
         try {
             initiatives = initiativeBankServices.searchInitiatives();
@@ -76,7 +76,34 @@ public class InitiativesBean extends BaseBean {
             Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    public void searchInitiativesStatus() {
+        try {
+            initiatives = initiativeBankServices.searchInitiatives();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("modificarEstadoIniciativa.xhtml");
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateStatus() {
+        try {
+            if (selectedInitiative == null || newStatus.equals("")) {
+                FacesMessage growlMessage = new FacesMessage("No se pudo cambiar el Estado", "No se ha seleccionado la Iniciativa o el nuevo Estado");
+                FacesContext.getCurrentInstance().addMessage(null, growlMessage);
+            } else {
+                initiativeBankServices.changeStatus(selectedInitiative.getId(), newStatus);
+                selectedInitiative.setStatus(newStatus);
+
+                
+                newStatus = "";
+                FacesMessage growlMessage = new FacesMessage("Cambio de Estado Exitoso", "La Iniciativa se cambió de Estado correctamente");
+                FacesContext.getCurrentInstance().addMessage(null, growlMessage);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public String getTitle() {
         return title;
@@ -149,7 +176,7 @@ public class InitiativesBean extends BaseBean {
     public void setFilteredInitiatives(List<User> filteredInitiatives) {
         this.filteredInitiatives = filteredInitiatives;
     }
-    
+
     public List<String> getStatuses() {
         return statuses;
     }

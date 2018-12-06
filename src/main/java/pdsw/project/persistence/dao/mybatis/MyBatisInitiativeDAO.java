@@ -41,6 +41,13 @@ public class MyBatisInitiativeDAO implements InitiativeDAO {
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
         initiativeMapper.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
     }
+    
+    @Override
+    public void updateStatus(long id, String newStatus) {
+        initiativeMapper.updateStatus(id, newStatus);
+    }
+    
+    
 
     /*
     @Override
@@ -49,4 +56,6 @@ public class MyBatisInitiativeDAO implements InitiativeDAO {
     	intentionMapper.addIntention(inten);        
     }
      */
+
+    
 }

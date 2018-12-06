@@ -109,6 +109,17 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
         return initiativeDAO.loadAll();
 
     }
+    
+    @Override
+    public void changeStatus(long id, String newStatus) {
+        initiativeDAO.updateStatus(id, newStatus);
+    }
+    
+    
+    
+    
+    
+    
 
     @Override
     public User searchUser(long id) throws InitiativeBankException {
@@ -130,4 +141,6 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
 
     //Insertar Usuario
     //Insertar Iniciativa
+
+    
 }
