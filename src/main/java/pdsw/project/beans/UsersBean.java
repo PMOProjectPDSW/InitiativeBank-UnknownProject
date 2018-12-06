@@ -1,11 +1,14 @@
 package pdsw.project.beans;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import pdsw.project.entities.User;
@@ -21,10 +24,11 @@ import pdsw.project.services.InitiativeBankServices;
 @SessionScoped
 public class UsersBean extends BaseBean {
 
-    /*private String mail;
-    private String password;*/
     private List<User> users;
+    private List<User> filteredUsers;
     private User selectedUser;
+    private List<String> roles = Arrays.asList("Administrador", "Personal de PMO - ODI", "Proponente de iniciativa o idea de proyecto", "Usuarios de consulta");
+    private String newRole;
 
     @Inject
     private InitiativeBankServices initiativeBankServices;
@@ -40,10 +44,21 @@ public class UsersBean extends BaseBean {
             Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
-    
+
+    public void updateRole() {
+        try {
+            if (selectedUser == null || newRole.equals("")) {
+                FacesMessage growlMessage = new FacesMessage("No se pudo cambiar el Rol", "No se ha seleccionado al Usuario o el nuevo Rol");
+                FacesContext.getCurrentInstance().addMessage(null, growlMessage);
+            } else {
+                initiativeBankServices.changeRole(selectedUser.getId(), newRole);
+                selectedUser.setRole(newRole);                
+                FacesContext.getCurrentInstance().getExternalContext().redirect("asignarPerfil.xhtml");               
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }
 
     /*
     public User searchUser(long id) {
@@ -54,17 +69,8 @@ public class UsersBean extends BaseBean {
         }
         return user;
     }*/
-    public List<User> searchhhhUsers() {
-        try {
-            users = initiativeBankServices.searchUsers();
-            //System.out.println(users.toString());
-        } catch (Exception ex) {
-            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return users;
-    }
 
-    /*
+ /*
     public void updateUser(long documento, Rol nuevoRol) {
         System.out.println(documento);
         System.out.println(nuevoRol);
@@ -87,12 +93,36 @@ public class UsersBean extends BaseBean {
         this.users = users;
     }
 
+    public List<User> getFilteredUsers() {
+        return filteredUsers;
+    }
+
+    public void setFilteredUsers(List<User> filteredUsers) {
+        this.filteredUsers = filteredUsers;
+    }
+
     public User getSelectedUser() {
         return selectedUser;
     }
 
     public void setSelectedUser(User selectedUser) {
         this.selectedUser = selectedUser;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public String getNewRole() {
+        return newRole;
+    }
+
+    public void setNewRole(String newRole) {
+        this.newRole = newRole;
     }
 
 }

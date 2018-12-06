@@ -40,12 +40,12 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
 
     public InitiativeBankServicesImpl() {
     }
-    /*
-    System.out.println("----------|username|user.getEmail()|");
-    System.out.println("----------|"+username+"|"+user.getEmail()+"|"); 
-    System.out.println("\n\n\n----------|loginAccess|\n"+loginAccess+"\n\n\n");
-    */
 
+    /*
+    System.out.println("\n\n\n----------|username|user.getEmail()|");
+    System.out.println("\n\n\n----------|"+username+"|"+user.getEmail()+"|"); 
+    System.out.println("\n\n\n----------|users|\n"+users+"\n\n\n");
+     */
     /**
      *
      * @param username
@@ -57,38 +57,37 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     public boolean checkLogin(String username, String password) throws InitiativeBankException {
         try {
             User user = userDAO.load(username);
-            boolean loginAccess;                     
-            if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {         
+            boolean loginAccess;
+            if ((user.getEmail().equals(username)) && (user.getPassword().equals(password))) {
                 loginAccess = true;
             } else {
                 loginAccess = false;
                 FacesMessage growlMessage = new FacesMessage("Inicio de Sesión Incorrecto", "El usuario no se ha autenticado correctamente.");
                 FacesContext.getCurrentInstance().addMessage(null, growlMessage);
-            }            
+            }
             return loginAccess;
         } catch (PersistenceException ex) {
             throw new InitiativeBankException("\nERROR:\nClass: InitiativeBankServicesImpl\n-Method: checkLogin()\nNo se pudo loggear correctamente\n", ex);
         }
     }
-    
+
     @Override
     public List<User> searchUsers() throws InitiativeBankException {
-        //List<User> users;
         try {
             return userDAO.loadAll();
         } catch (PersistenceException ex) {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public void changeRole(long id, String newRole) throws InitiativeBankException {
+        try {
+            userDAO.updateRole(id, newRole);
+        } catch (NullPointerException ex) {
+            throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
+        }
+    }
 
     @Override
     public User searchUser(String email) throws InitiativeBankException {

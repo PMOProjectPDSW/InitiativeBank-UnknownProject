@@ -6,39 +6,38 @@ body {
    clear: both;
 }
 
-.asignProfileClass {
-    padding-bottom: 0%;
-    text-align: center;
-}
-
-.footer {    
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
 }
 
-.footerLarge {    
+.footerLarge {
     position: inherit;
     left: 0;
     bottom: 0;
     width: 100%;
 }
-
+/*
 .ui-panel-titlebar{
     border:red;
     text-align: center;
 }
 
 .ui-button {
-    background-color: #990000; /* Red */
-    /*border: 2px solid #990000;*/
+    background-color: #990000;
     color: #FFFFFF;
     text-align: center;
     font-size: 16px;
+}*/
+
+.topHeader {
+    margin: auto;
+    width: auto;
 }
 
-.topHeader {    
+.pageHeader {
     margin: auto;
     width: auto;
 }
@@ -49,7 +48,7 @@ body {
     overflow: hidden;
 }
 
-.topNavigation button{
+.topNavigation button {
     float: left;
     text-align: center;
     padding: 0px 0px;
@@ -74,28 +73,9 @@ body {
 .topNavigation-Right {
     float: right;
     font-size: 10px;
-    color: white;
+    color: green;
     text-align: right;
 }
-
-.pageHeader {    
-    margin: auto;
-    width: auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .image {
     display: block;
@@ -104,8 +84,6 @@ body {
 }
 
 .logoImg {
-    /*height: 100%;
-    width: 50%;*/
     height: 50%;
 }
 
@@ -114,12 +92,11 @@ body {
     text-justify: inter-word;
 }
 
-.loginClass {    
+.loginClass {
     margin: auto;
     vertical-align: middle;
     width: fit-content;
     text-align: center;
-    /*font-size: 8px;*/    
 }
 
 .loginClass fieldset {
@@ -127,22 +104,20 @@ body {
     vertical-align: middle;
     width: fit-content;
     text-align: center;
-    /*margin-bottom:2000px;*/ 
 }
 
 .panelLoginClass {
-    text-align: right;   
+    text-align: right;
 }
 
-.optionsMenuClass fieldset{
+.optionsMenuClass fieldset {
     margin: auto;
     vertical-align: middle;
     width: fit-content;
     text-align: center;
-    /*margin-bottom:2000px;*/
 }
 
-.optionsMenuClass button{ 
+.optionsMenuClass button {
     float: right;
     text-align: center;
     padding: 0px 0px;
@@ -150,6 +125,32 @@ body {
     font-size: 17px;
 }
 
+.asignProfileClass {
+    padding-bottom: 0%;
+    text-align: left;
+}
+
+/*
+.asignProfileClass { 
+    padding-bottom: 0%;
+    margin: auto;
+    vertical-align: middle;
+    width: fit-content;
+    text-align: center;
+    font-size: 8px;  
+}
+
+.asignProfileClass fieldset {
+    margin: auto;
+    vertical-align: middle;
+    width: fit-content;
+    text-align: center; 
+}
+
+.panelChangeRoleClass {
+    text-align: center;
+}
+*/
 
 
 
@@ -159,7 +160,6 @@ a {
     vertical-align: middle;
     width: fit-content;
     text-align: center;
-    /*font-size: 15px;*/
 }
 
 a:link {

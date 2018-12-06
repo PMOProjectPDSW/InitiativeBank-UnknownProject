@@ -55,6 +55,17 @@
         SELECT *
         FROM Users;
     </select>
+    
+    <update id="updateRole" parameterType="map">
+        UPDATE Users
+        SET Role = #{user_role}
+        WHERE ID = #{user_id};        
+    </update>
+    
+    
+    
+    
+    
         
     <!--<delete id="deleteAll">
         DELETE

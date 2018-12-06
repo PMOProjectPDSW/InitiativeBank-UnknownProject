@@ -16,6 +16,7 @@ public interface InitiativeBankServices {
     public boolean checkLogin(String username, String password) throws InitiativeBankException;
     public User searchUser(String email) throws InitiativeBankException;
     public List<User> searchUsers() throws InitiativeBankException;
+    public void changeRole(long id, String newRole) throws InitiativeBankException;
     
     
     
@@ -26,5 +27,7 @@ public interface InitiativeBankServices {
     ////////
     public Initiative searchInitiative(long id) throws InitiativeBankException;
     public List<Initiative> searchInitiatives() throws InitiativeBankException;
+
+    
     
 }

@@ -37,37 +37,60 @@
             <img src="resources/img/pages/usersImg.svg" class="image" />
         </div>
         <br/>
-        <div id="asignProfile" class="asignProfileClass">
-            <h:form id="asignProfileForm">
+        <div id="asignProfileDiv" class="asignProfileClass">
+            <h:form id="asignProfileForm">                
+                <p:growl id="growlAsignProfile" showDetail="true" sticky="false" />                
                 <p:fieldset legend="Asignar Perfil a Usuarios" >
+                    <p>Para asignar un tipo de perfil a un usuario debe primero seleccionarlo en la tabla de Usuarios y luego seleccionar el nuevo Rol que va a tener este de las opciones de abajo.</p>
+                    <h:panelGrid columns="1" cellpadding="2" class="panelChangeRoleClass">
+
+                        <p:row>
+                            <p:outputLabel value="Usuario Seleccionado:" style="font-weight:bold"/>
+                            <p:outputLabel id="selectedUser" value="#{usersBean.selectedUser.email}" style="font-weight:bold"/>                       
+                            <p:poll interval="1" listener="{usersBean.getSelectedUser()}" update="selectedUser" />
+                        </p:row> 
+                        <p:row>
+                            <p:outputLabel for="newRole" value="Nuevo Rol:" style="font-weight:bold"/>
+                            <p:selectOneMenu id="newRole" value="#{usersBean.newRole}" >
+                                <f:selectItem itemLabel="Seleccionar Rol" itemValue="" noSelectionOption="true" />
+                                <f:selectItems value="#{usersBean.roles}" />
+                            </p:selectOneMenu>
+                        </p:row> 
+                        <p:row>
+                            <p:commandButton update="growlAsignProfile" action="#{usersBean.updateRole()}" value="Actualizar" icon="fa fa-exchange"/>
+                        </p:row> 
+
+                    </h:panelGrid>  
                 </p:fieldset>
-
-
-                <p:dataTable id="searchUsersTable" var="user" value="#{usersBean.users}" selectionMode="single" selection="#{usersBean.selectedUser}" rowKey="#{user.id}">
+                
+                <p:dataTable id="searchUsersTable" var="user" value="#{usersBean.users}" widgetVar="usersTable" selectionMode="single" selection="#{usersBean.selectedUser}" rowKey="#{user.id}" filteredValue="#{usersBean.filteredUsers}" stickyHeader="true">
                     <f:facet name="header">
-                        Usuarios
+                        <p>Usuarios</p>
                     </f:facet>
-                    <p:column headerText="Documento">
+                    <p:column headerText="Documento" sortBy="#{user.id}" filterBy="#{user.id}">
                         <h:outputText value="#{user.id}" />
                     </p:column>
-                    <p:column headerText="Nombre">
+                    <p:column headerText="Nombre" sortBy="#{user.name}" filterBy="#{user.name}">
                         <h:outputText value="#{user.name}" />
                     </p:column>
-                    <p:column headerText="Correo">
+                    <p:column headerText="Correo" sortBy="#{user.email}" filterBy="#{user.email}">
                         <h:outputText value="#{user.email}" />
                     </p:column>
-                    <p:column headerText="Area">
+                    <p:column headerText="Area" sortBy="#{user.area}" filterBy="#{user.area}">
                         <h:outputText value="#{user.area}" />
                     </p:column>
-                    <p:column headerText="Rol">
+                    <p:column headerText="Rol" sortBy="#{user.role}" filterBy="#{user.role}" filterMatchMode="exact">
+                        <f:facet name="filter">
+                            <p:selectOneMenu onchange="PF('usersTable').filter()" >
+                                <f:selectItem itemLabel="Seleccionar Rol" itemValue="#{null}" noSelectionOption="true" />
+                                <f:selectItems value="#{usersBean.roles}" />
+                            </p:selectOneMenu>
+                        </f:facet>
                         <h:outputText value="#{user.role}" />
                     </p:column>
-
-                    <f:facet name="footer">
-                        <p:commandButton process="searchUsersTable" update="asignProfileForm" icon="fa fa-repeat" value="Cambiar Perfil" oncomplete="PF('searchUsersTable').show()"/>
+                    <f:facet name="footer">                        
+                        <p>En total hay #{usersBean.users.size()} Usuarios.</p>
                     </f:facet>
-
-
                 </p:dataTable>
 
 

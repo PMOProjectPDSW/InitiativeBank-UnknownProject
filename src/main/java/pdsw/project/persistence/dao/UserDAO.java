@@ -16,6 +16,9 @@ public interface UserDAO {
     
     public User load(String email) throws PersistenceException;
     public List<User> loadAll() throws PersistenceException;
+    public void updateRole(long id, String newRole) throws PersistenceException;;
+     
+     
     
     
     
@@ -24,5 +27,7 @@ public interface UserDAO {
     public User load(long id) throws PersistenceException;
     
     public void update(User user) throws PersistenceException;
+
+   
     
 }

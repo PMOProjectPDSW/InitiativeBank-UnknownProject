@@ -14,11 +14,16 @@ import pdsw.project.entities.User;
 public interface UserMapper {
     
     public User getUserByEmail(@Param("user_email") String email);
+    public List<User> getUsers();
+    public void updateRole(@Param("user_id") long id, @Param("user_role") String newRole);
+    
     
     
     
     
     public User getUserByID(@Param("user_id") long id);
-    public List<User> getUsers();
+    
+
+    
     
 }
