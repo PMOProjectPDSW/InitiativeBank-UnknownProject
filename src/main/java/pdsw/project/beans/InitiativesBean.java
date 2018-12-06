@@ -15,6 +15,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import org.primefaces.model.chart.PieChartModel;
 import pdsw.project.entities.Initiative;
 import pdsw.project.entities.User;
 import pdsw.project.services.InitiativeBankServices;
@@ -41,11 +42,19 @@ public class InitiativesBean extends BaseBean {
     private List<Initiative> initiatives;
     private List<User> filteredInitiatives;
     private List<String> statuses = Arrays.asList("En espera de revision", "En revision", "Proyecto", "Solucionado");
+    private PieChartModel modelInitiatives;
 
     @Inject
     private InitiativeBankServices initiativeBankServices;
 
     public InitiativesBean() {
+        modelInitiatives = new PieChartModel();
+        modelInitiatives.set("Estudiante", 42);
+        modelInitiatives.set("Servicios Generales", 6);
+        modelInitiatives.set("Administrativos", 34);
+        modelInitiatives.set("Profesores", 18);
+        modelInitiatives.setTitle("Iniciativas por Area");
+        modelInitiatives.setLegendPosition("e");
     }
 
     public void registerInitiative() {
@@ -82,12 +91,20 @@ public class InitiativesBean extends BaseBean {
             ELContext elContext = FacesContext.getCurrentInstance().getELContext();
             LoginBean loginBean = (LoginBean) elContext.getELResolver().getValue(elContext, null, "loginBean");
             user_id = loginBean.getUser().getId();
-            
+
             initiatives = initiativeBankServices.searchInitiativesProponent(user_id);
             FacesContext.getCurrentInstance().getExternalContext().redirect("consultarIniciativasProponente.xhtml");
         } catch (Exception ex) {
             Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void initiativesxArea() {
+        modelInitiatives();
+    }
+
+    private void modelInitiatives() {
+        
     }
 
     public void searchInitiativesStatus() {
@@ -211,6 +228,14 @@ public class InitiativesBean extends BaseBean {
 
     public void setTag_id(long tag_id) {
         this.tag_id = tag_id;
+    }
+
+    public PieChartModel getModelInitiatives() {
+        return modelInitiatives;
+    }
+
+    public void setModelInitiatives(PieChartModel modelInitiatives) {
+        this.modelInitiatives = modelInitiatives;
     }
 
 }

@@ -42,8 +42,10 @@
             <h:form id="statisticsareaForm">
                 <p:fieldset legend="Estadisticas de Iniciativas por Area" >
                     <h:panelGrid columns="3" >
-                        
-                        
+
+                        <p:chart type="pie" model="#{initiativesBean.modelInitiatives}"
+                                 styleClass="medium-pie"/>
+
                     </h:panelGrid>  
                 </p:fieldset>
             </h:form>            
