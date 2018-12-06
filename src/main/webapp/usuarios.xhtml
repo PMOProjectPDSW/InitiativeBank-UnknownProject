@@ -21,7 +21,7 @@
                 <p:button outcome="iniciativas.xhtml" value="Iniciativas" icon="fa fa-lightbulb-o"/>
                 <p:button outcome="estadisticas.xhtml" value="Estadisticas" icon="fa fa-bar-chart"/>
                 <p:button outcome="usuarios.xhtml" value="Usuarios" icon="fa fa-user"/>
-                <p:button outcome="login.xhtml" value="Salir" icon="fa fa-sign-out"/>
+                <p:commandButton value="Salir" icon="fa fa-sign-out" actionListener="#{loginBean.logOut()}" />
             </div>
 
             <div class="topNavigation-Right">

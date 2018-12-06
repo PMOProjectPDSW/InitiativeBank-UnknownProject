@@ -48,6 +48,18 @@ public class LoginBean extends BaseBean {
             Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void logOut() throws InitiativeBankException {
+        try {
+            User voidUser = new User();
+            setUser(voidUser);
+            username = "";
+            password = "";
+            FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+        } catch (IOException ex) {
+            Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public String getUsername() {
         return username;
