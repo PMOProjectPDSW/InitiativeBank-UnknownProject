@@ -20,32 +20,25 @@
     
     <select id="getInitiatives" resultMap="InitiativeResult">
         SELECT 
-            I.ID                    as Initiative_ID,            
-            I.Title                 as Initiative_Title,
-            I.Description           as Initiative_Description,
-            I.Status                as Initiative_Status,
-            I.CreationDate          as Initiative_CreationDate,
-            I.Field                 as Initiative_Field,
-            I.KeyWords              as Initiative_KeyWords,
-            I.Users_ID              as Initiative_User_ID,
-            U.Name                  as User_Name,
-            U.Email                 as User_Email,
-            U.Area                  as User_Area,
-            U.Role                  as User_Role
+            I.ID,            
+            I.Title,
+            I.Description,
+            I.Status,
+            I.CreationDate,
+            I.Field,
+            I.KeyWords,
+            I.Users_ID,
+            U.Name,
+            U.Email,
+            U.Area,
+            U.Role
         FROM Initiative as I, Users as U
         WHERE I.Users_ID = U.ID;
     </select>
     
     <select id="getInitiative" resultMap="InitiativeResult">
-        SELECT
-            I.ID                    as Initiative_ID,            
-            I.Title                 as Initiative_Title,
-            I.Description           as Initiative_Description,
-            I.Status                as Initiative_Status,
-            I.CreationDate          as Initiative_CreationDate,
-            I.Field                 as Initiative_Field,
-            I.KeyWords              as Initiative_KeyWords
-        FROM Initiative as I
+        SELECT *
+        FROM Initiative I
         WHERE ID = #{initiative_id};
     </select>
     

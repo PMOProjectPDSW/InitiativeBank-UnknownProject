@@ -4,16 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="pdsw.project.persistence.dao.mybatis.mappers.UserMapper">
-    <!--
-    <resultMap type='User' id='UserResult'>     
-        <id property='id' column='user_id'/> 
-        <result property='fullName' column='user_fullName'/>
-        <result property='email' column='user_email'/>
-        <result property='departmentArea' column='user_departmentArea'/>
-        <result property='password' column='user_password'/>
-        <result property='rol' column='user_rol'/>
-    </resultMap>
-    -->
     
     <resultMap type='User' id='UserResult'>     
         <id property='id' column='ID'/> 
@@ -32,28 +22,14 @@
     </select>    
     
     <select id='getUserByID' resultMap='UserResult'>
-        SELECT
-            U.ID                    as User_ID,
-            U.Name                  as User_Name,
-            U.Email                 as User_Email,
-            U.Password              as User_Password,
-            U.Area                  as User_Area,
-            U.Role                  as User_Role
-        FROM Users as U
+        SELECT *
+        FROM Users
         WHERE ID = #{user_id};
     </select>
     
-    <select id='getUsers' parameterType="User" resultMap='UserResult'>
-        <!--SELECT
-            U.ID                    as User_ID,
-            U.Name                  as User_Name,
-            U.Email                 as User_Email,
-            U.Password              as User_Password,
-            U.Area                  as User_Area,
-            U.Role                  as User_Role
-        FROM Users as U;-->
+    <select id='getUsers' parameterType="User" resultMap='UserResult'>        
         SELECT *
-        FROM Users;
+        FROM Users;        
     </select>
     
     <update id="updateRole" parameterType="map">
@@ -62,11 +38,6 @@
         WHERE ID = #{user_id};        
     </update>
     
-    
-    
-    
-    
-        
     <!--<delete id="deleteAll">
         DELETE
         FROM Usuario

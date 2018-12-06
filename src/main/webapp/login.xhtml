@@ -14,10 +14,10 @@
             <img src="resources/img/header/topHeaderImg.svg" class="image" />
         </div>        
         <div class="pageHeader">
-            <img src="resources/img/pages/loginImg.svg" class="image" />
+            <img src="resources/img/pages/loginHeader.svg" class="image" />
         </div>
         <br/>
-        
+
         <div id="sectionLogin" class="loginClass">
             <h:form id="loginForm" >
                 <p:growl id="growlLogin" showDetail="true" sticky="false" /> 
@@ -25,25 +25,25 @@
                     <br/>
                     <h:panelGrid columns="1" cellpadding="2" class="panelLoginClass">
                         <p:row>
-                        <p:outputLabel value="Usuario Correo:" for="username" />
-                        <p:inputText id="username" required="true" value="#{loginBean.username}" title="Introduce tu correo" placeholder="Usuario Correo"/>
-                        <p:tooltip id="toolTipUsername" for="username" showEvent="focus" hideEvent="blur" />
+                            <p:outputLabel value="Usuario Correo:" for="username" />
+                            <p:inputText id="username" required="true" value="#{loginBean.username}" title="Introduce tu correo" placeholder="Usuario Correo"/>
+                            <p:tooltip id="toolTipUsername" for="username" showEvent="focus" hideEvent="blur" />
                         </p:row>                 
-                                                
+
                         <p:row>
-                        <p:outputLabel value="Contraseña:" for="password" />
-                        <p:inputText id="password" type="password" required="true" value="#{loginBean.password}" title="Introduce tu contraseña" placeholder="Contraseña"/>
-                        <p:tooltip id="toolTipPassword" for="password" showEvent="focus" hideEvent="blur" />
+                            <p:outputLabel value="Contraseña:" for="password" />
+                            <p:inputText id="password" type="password" required="true" value="#{loginBean.password}" title="Introduce tu contraseña" placeholder="Contraseña"/>
+                            <p:tooltip id="toolTipPassword" for="password" showEvent="focus" hideEvent="blur" />
                         </p:row>
 
                         <p:row>
-                        <p:commandButton value="Ingresar" update="growlLogin" actionListener="#{loginBean.doLogin()}" /> 
+                            <p:commandButton value="Ingresar" update="growlLogin" actionListener="#{loginBean.doLogin()}" /> 
                         </p:row>
                     </h:panelGrid>                    
                 </p:fieldset>
             </h:form>
         </div> 
-        
+
         <div class="footer">
             <img src="resources/img/footer/footerImg.svg" class="image" />
         </div>

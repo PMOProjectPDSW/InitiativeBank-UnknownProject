@@ -34,7 +34,7 @@
         </div>
 
         <div class="pageHeader">
-            <img src="resources/img/pages/usersImg.svg" class="image" />
+            <img src="resources/img/pages/asignProfileHeader.svg" class="image" />
         </div>
         <br/>
         <div id="asignProfileDiv" class="asignProfileClass">
@@ -42,27 +42,23 @@
                 <p:growl id="growlAsignProfile" showDetail="true" sticky="false" />                
                 <p:fieldset legend="Asignar Perfil a Usuarios" >
                     <p>Para asignar un tipo de perfil a un usuario debe primero seleccionarlo en la tabla de Usuarios y luego seleccionar el nuevo Rol que va a tener este de las opciones de abajo.</p>
-                    <h:panelGrid columns="1" cellpadding="2" class="panelChangeRoleClass">
+                    <p:poll interval="1" listener="{usersBean.getSelectedUser()}" update="selectedUser" />
+                    <h:panelGrid columns="2" cellpadding="2" class="panelChangeRoleClass">
 
-                        <p:row>
-                            <p:outputLabel value="Usuario Seleccionado:" style="font-weight:bold"/>
-                            <p:outputLabel id="selectedUser" value="#{usersBean.selectedUser.email}" style="font-weight:bold"/>                       
-                            <p:poll interval="1" listener="{usersBean.getSelectedUser()}" update="selectedUser" />
-                        </p:row> 
-                        <p:row>
-                            <p:outputLabel for="newRole" value="Nuevo Rol:" style="font-weight:bold"/>
-                            <p:selectOneMenu id="newRole" value="#{usersBean.newRole}" >
-                                <f:selectItem itemLabel="Seleccionar Rol" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{usersBean.roles}" />
-                            </p:selectOneMenu>
-                        </p:row> 
-                        <p:row>
-                            <p:commandButton update="growlAsignProfile" action="#{usersBean.updateRole()}" value="Actualizar" icon="fa fa-exchange"/>
-                        </p:row> 
+                        <h:outputText for="selectedUser" value="Usuario Seleccionado:"/>  
+                        <p:outputLabel id="selectedUser" value="#{usersBean.selectedUser.email}"/>   
 
-                    </h:panelGrid>  
+                        <h:outputText for="newRole" value="Nuevo Rol:"/>
+                        <p:selectOneMenu id="newRole" value="#{usersBean.newRole}" >
+                            <f:selectItem itemLabel="Seleccionar Rol" itemValue="" noSelectionOption="true" />
+                            <f:selectItems value="#{usersBean.roles}" />
+                        </p:selectOneMenu>
+                        <br/>
+                        <p:commandButton update="growlAsignProfile" action="#{usersBean.updateRole()}" value="Actualizar" icon="fa fa-exchange"/>
+                    </h:panelGrid> 
+
                 </p:fieldset>
-                
+
                 <p:dataTable id="searchUsersTable" var="user" value="#{usersBean.users}" widgetVar="usersTable" selectionMode="single" selection="#{usersBean.selectedUser}" rowKey="#{user.id}" filteredValue="#{usersBean.filteredUsers}" stickyHeader="true">
                     <f:facet name="header">
                         <p>Usuarios</p>
