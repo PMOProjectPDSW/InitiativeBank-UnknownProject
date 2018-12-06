@@ -36,6 +36,25 @@
         WHERE I.Users_ID = U.ID;
     </select>
     
+    <select id="getInitiativesProponent" resultMap="InitiativeResult">
+        SELECT 
+            I.ID,            
+            I.Title,
+            I.Description,
+            I.Status,
+            I.CreationDate,
+            I.Field,
+            I.KeyWords,
+            I.Users_ID,
+            U.Name,
+            U.Email,
+            U.Area,
+            U.Role
+        FROM Initiative as I, Users as U
+        WHERE I.Users_ID = U.ID
+        AND I.Users_ID = #{user_id};
+    </select>
+    
     <select id="getInitiative" resultMap="InitiativeResult">
         SELECT *
         FROM Initiative I

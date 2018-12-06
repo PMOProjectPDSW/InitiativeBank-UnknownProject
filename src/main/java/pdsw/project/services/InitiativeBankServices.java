@@ -21,6 +21,7 @@ public interface InitiativeBankServices {
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id);
     public List<Initiative> searchInitiatives();
     public void changeStatus(long id, String newStatus);
+    public List<Initiative> searchInitiativesProponent(long user_id);
     
     
     
@@ -28,6 +29,8 @@ public interface InitiativeBankServices {
     
     ////////
     public Initiative searchInitiative(long id) throws InitiativeBankException;
+
+    
 
     
     

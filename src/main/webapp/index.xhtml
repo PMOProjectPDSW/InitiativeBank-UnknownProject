@@ -56,6 +56,11 @@
                                         <a href="consultarIniciativas.xhtml">- Consultar Iniciativas</a>                                            
                                     </p:row>
                                     <br/>
+                                    <br/>
+                                    <p:row rendered="#{loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}">
+                                        <a href="consultarIniciativasProponente.xhtml">- Consultar Iniciativas del Proponente</a>                                            
+                                    </p:row>
+                                    <br/>
                                     <p:row rendered="#{loginBean.user.role == 'Administrador'}">
                                         <a href="modificarEstadoIniciativa.xhtml">- Modificar Estado de Iniciativa</a>                                            
                                     </p:row>
@@ -72,12 +77,8 @@
                                     <img src="resources/img/tools/statisticsLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
-                                    </p:row>
-                                    <br/>
-                                    <p:row>
-                                        <a href="index.xhtml">- Consultar Estadisticas</a>                                          
+                                    <p:row rendered="#{loginBean.user.role == 'Usuarios de consulta'}">
+                                        <a href="estIniciativasAreas.xhtml">- Consultar Estadisticas de Iniciativas por Areas</a>                                          
                                     </p:row>
                                     <br/>
                                     <br/>

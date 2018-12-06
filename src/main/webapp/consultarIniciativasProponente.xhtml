@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <h:outputStylesheet name="css/cssLayout.css"/>
-        <title>Iniciativas | Modificar Estado Iniciativa</title>
+        <title>Iniciativas | Consultar Iniciativas</title>
         <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>   
         <link rel="icon" type="image/png" href="resources/img/tools/InitiativeBankLogo.png"/>
     </h:head>
@@ -35,31 +35,18 @@
         </div>
 
         <div class="pageHeader">
-            <img src="resources/img/pages/modifyInitiativeStateHeader.svg" class="image" />
+            <img src="resources/img/pages/consultInitiativesHeader.svg" class="image" />
         </div>
         <br/>
-        <div id="changeStatusDiv" class="asignProfileClass">
-            <h:form id="changeStatusForm">                
-                <p:growl id="growlchangeStatus" showDetail="true" sticky="false" />                
-                <p:fieldset legend="Modificar Estado una Iniciativa" >
-                    <p>Para modificar el Estado de una Iniciativa debe primero seleccionarla en la tabla de Iniciativas y luego seleccionar el nuevo Estado que va a tener esta de las opciones de abajo.</p>
-                    <p:poll interval="1" listener="#{initiativesBean.getSelectedInitiative()}" update="selectedInitiative" />
-                    <h:panelGrid columns="2" cellpadding="2" class="panelChangeRoleClass">
+        <div id="consultInitiativesProponentDiv" class="asignProfileClass">
+            <h:form id="consultInitiativesProponentForm">                
+                <p:growl id="growlConsultInitiativesProponent" showDetail="true" sticky="false" />                
+                <p:fieldset legend="Consultar Iniciativas del Proponente" >
+                    <p>En la tabla de abajo puede consultar todas las Iniciativas del Proponenteque se encuentran registradas.</p>
 
-                        <h:outputText for="selectedInitiative" value="Iniciativa Seleccionada:"/>  
-                        <p:outputLabel id="selectedInitiative" value="#{initiativesBean.selectedInitiative.title}"/>   
-
-                        <h:outputText for="newStatus" value="Nuevo Estado:"/>
-                        <p:selectOneMenu id="newStatus" value="#{initiativesBean.newStatus}" >
-                            <f:selectItem itemLabel="Seleccionar Estado" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{initiativesBean.statuses}" />
-                        </p:selectOneMenu>
-                        <br/>
-                        <p:commandButton update="growlchangeStatus changeStatusForm" action="#{initiativesBean.updateStatus()}" value="Modificar" icon="fa fa-exchange"/>
-                    </h:panelGrid>
                 </p:fieldset>
 
-                <p:dataTable id="searchInitiativesTable" var="initiative" value="#{initiativesBean.initiatives}" widgetVar="initiativesTable" selectionMode="single" selection="#{initiativesBean.selectedInitiative}" rowKey="#{initiative.id}" filteredValue="#{initiativesBean.filteredInitiatives}" stickyHeader="true">
+                <p:dataTable id="searchInitiativesProponentTable" var="initiative" value="#{initiativesBean.initiatives}" widgetVar="initiativesTable" selectionMode="single" selection="#{initiativesBean.selectedInitiative}" rowKey="#{initiative.id}" filteredValue="#{initiativesBean.filteredInitiatives}" stickyHeader="true">
                     <f:facet name="header">
                         <p>Iniciativas</p>
                     </f:facet>

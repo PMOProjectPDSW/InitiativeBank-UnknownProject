@@ -58,7 +58,7 @@
                             </h:panelGrid>
                         </p:panel>
                         
-                        <p:panel id="searchInitiativePanel" rendered="#{loginBean.user.role == 'Usuarios de consulta'}" header="Consultar Iniciativas">
+                        <p:panel id="searchInitiativePanel" rendered="#{loginBean.user.role == 'Usuarios de consulta' || loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}" header="Consultar Iniciativas">
                             <h:panelGrid columns="2" cellpadding="0">
                                 <a href="consultarIniciativas.xhtml">
                                     <img src="resources/img/tools/consultInitiativesLogo.png" class="logoImg"/>
@@ -70,6 +70,22 @@
                                     <br/>
                                     <br/>
                                     <p:commandButton value="Ir a Consultar Iniciativas" actionListener="#{initiativesBean.searchInitiatives()}" />
+                                </p:column>                                
+                            </h:panelGrid>
+                        </p:panel>
+                        
+                        <p:panel id="searchInitiativeProponentPanel" rendered="#{loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}" header="Consultar Iniciativas del Proponente">
+                            <h:panelGrid columns="2" cellpadding="0">
+                                <a href="consultarIniciativas.xhtml">
+                                    <img src="resources/img/tools/consultInitiativesLogo.png" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <p:row>
+                                        <p class ="parraph">Consultar Iniciativas del Proponente</p>                                                                          
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:commandButton value="Ir a Consultar Iniciativas del Proponente" actionListener="#{initiativesBean.searchInitiativesProponent()}" />
                                 </p:column>                                
                             </h:panelGrid>
                         </p:panel>

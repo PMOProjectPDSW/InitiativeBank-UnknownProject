@@ -36,6 +36,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO {
         return initiativeMapper.getInitiatives();
 
     }
+    
+    @Override
+    public List<Initiative> loadAllProponent(long user_id) {
+        return initiativeMapper.getInitiativesProponent(user_id);
+    }
 
     @Override
     public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
@@ -56,6 +61,8 @@ public class MyBatisInitiativeDAO implements InitiativeDAO {
     	intentionMapper.addIntention(inten);        
     }
      */
+
+    
 
     
 }

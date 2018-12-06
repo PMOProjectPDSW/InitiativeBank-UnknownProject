@@ -111,6 +111,11 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     }
     
     @Override
+    public List<Initiative> searchInitiativesProponent(long user_id) {
+        return initiativeDAO.loadAllProponent(user_id);
+    }
+    
+    @Override
     public void changeStatus(long id, String newStatus) {
         initiativeDAO.updateStatus(id, newStatus);
     }
@@ -141,6 +146,8 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
 
     //Insertar Usuario
     //Insertar Iniciativa
+
+    
 
     
 }

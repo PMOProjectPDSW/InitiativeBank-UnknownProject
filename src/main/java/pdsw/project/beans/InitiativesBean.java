@@ -77,6 +77,19 @@ public class InitiativesBean extends BaseBean {
         }
     }
 
+    public void searchInitiativesProponent() {
+        try {
+            ELContext elContext = FacesContext.getCurrentInstance().getELContext();
+            LoginBean loginBean = (LoginBean) elContext.getELResolver().getValue(elContext, null, "loginBean");
+            user_id = loginBean.getUser().getId();
+            
+            initiatives = initiativeBankServices.searchInitiativesProponent(user_id);
+            FacesContext.getCurrentInstance().getExternalContext().redirect("consultarIniciativasProponente.xhtml");
+        } catch (Exception ex) {
+            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public void searchInitiativesStatus() {
         try {
             initiatives = initiativeBankServices.searchInitiatives();
@@ -95,7 +108,6 @@ public class InitiativesBean extends BaseBean {
                 initiativeBankServices.changeStatus(selectedInitiative.getId(), newStatus);
                 selectedInitiative.setStatus(newStatus);
 
-                
                 newStatus = "";
                 FacesMessage growlMessage = new FacesMessage("Cambio de Estado Exitoso", "La Iniciativa se cambió de Estado correctamente");
                 FacesContext.getCurrentInstance().addMessage(null, growlMessage);
