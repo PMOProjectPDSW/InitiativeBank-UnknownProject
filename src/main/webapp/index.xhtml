@@ -48,20 +48,16 @@
                                     <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
                                 </a>
                                 <p:column>
-                                    <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
+                                    <p:row rendered="#{loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}">
                                         <a href="registrarIniciativa.xhtml">- Registrar Iniciativa</a>                                           
                                     </p:row>
                                     <br/>
-                                    <p:row>
-                                        <a href="index.xhtml">- Consultar Iniciativas</a>                                          
-                                    </p:row>
-                                    <br/>
                                     <p:row rendered="#{loginBean.user.role != 'Usuarios de consulta'}">
-                                        <a href="modificarIniciativa.xhtml">- Modificar Iniciativa</a>                                            
+                                        <a href="consultarIniciativas.xhtml">- Consultar Iniciativas</a>                                            
                                     </p:row>
                                     <br/>
                                     <p:row rendered="#{loginBean.user.role == 'Administrador' || loginBean.user.role == 'Personal PMO - ODI'}">
-                                        <a href="actualizarEstadoIniciativa.xhtml">- Actualizar Estado de Iniciativa</a>                                            
+                                        <a href="modificarEstadoIniciativa.xhtml">- Modificar Estado de Iniciativa</a>                                            
                                     </p:row>
                                     <br/>
                                     <br/>

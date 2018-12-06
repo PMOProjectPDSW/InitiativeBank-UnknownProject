@@ -1,6 +1,7 @@
 package pdsw.project.persistence.dao.mybatis;
 
 import com.google.inject.Inject;
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.exceptions.PersistenceException;
 import pdsw.project.entities.Initiative;
@@ -36,6 +37,13 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
             throw new PersistenceException("ERROR MyBATIS:\nNo se pudieron mostrar todas las Iniciativas.", ex);
         }              
     }
+    
+    @Override
+    public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
+        initiativeMapper.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
+    }
+    
+    
     
     /*
     @Override

@@ -1,12 +1,14 @@
 package pdsw.project.beans;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.inject.Inject;
 import pdsw.project.entities.User;
 import pdsw.project.services.InitiativeBankException;
@@ -16,10 +18,11 @@ import pdsw.project.services.InitiativeBankServices;
  *
  * @author 2099190
  */
+@Named
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "loginBean")
 @SessionScoped
-public class LoginBean extends BaseBean {
+public class LoginBean extends BaseBean implements Serializable{
 
     private String username;
     private String password;

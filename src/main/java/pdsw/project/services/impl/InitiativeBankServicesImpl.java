@@ -2,6 +2,7 @@ package pdsw.project.services.impl;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import java.util.Date;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -44,7 +45,7 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
     /*
     System.out.println("\n\n\n----------|username|user.getEmail()|");
     System.out.println("\n\n\n----------|"+username+"|"+user.getEmail()+"|"); 
-    System.out.println("\n\n\n----------|users|\n"+users+"\n\n\n");
+    System.out.println("\n\n\n----------|users|\n"+users);
      */
     /**
      *
@@ -79,6 +80,15 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
+    
+    @Override
+    public User searchUser(String email) throws InitiativeBankException {
+        try {
+            return userDAO.load(email);
+        } catch (PersistenceException ex) {
+            throw new InitiativeBankException("\nERROR:\nNo se pudo encontrar al Usuario", ex);
+        }
+    }
 
     @Override
     public void changeRole(long id, String newRole) throws InitiativeBankException {
@@ -88,15 +98,22 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
             throw new InitiativeBankException("\nERROR:\nNo se pudieron listar todos los Usuarios", ex);
         }
     }
-
+    
     @Override
-    public User searchUser(String email) throws InitiativeBankException {
-        try {
-            return userDAO.load(email);
-        } catch (PersistenceException ex) {
-            throw new InitiativeBankException("\nERROR:\nNo se pudo encontrar al Usuario", ex);
-        }
+    public void addInitiative(String title, String description, String newStatus, Date creationDate, String field, String keyWords, long user_id, long tag_id) {
+        initiativeDAO.addInitiative(title, description, newStatus, creationDate, field, keyWords, user_id, tag_id);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     @Override
     public User searchUser(long id) throws InitiativeBankException {
@@ -127,4 +144,5 @@ public class InitiativeBankServicesImpl implements InitiativeBankServices {
 
     //Insertar Usuario
     //Insertar Iniciativa
+
 }

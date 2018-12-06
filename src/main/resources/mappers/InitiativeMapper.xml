@@ -42,10 +42,10 @@
         WHERE ID = #{initiative_id};
     </select>
     
-    <!--
-    <insert parameterType="map" id="addInitiative">
-    	INSERT INTO iniciativas values(#{i.id},#{i.estado},#{i.autor.documento},#{i.nombre},#{i.descripcion},#{i.fechaCreacion}, string_to_array(#{i.palabrasClave},','),#{i.area});   	
+    <insert id="addInitiative" parameterType="map">
+    	INSERT INTO Initiative(Title, Description, Status, CreationDate, Field, KeyWords, Users_ID, Tag_ID) 
+        VALUES(#{initiative_title}, #{initiative_description}, #{initiative_status}, #{initiative_creationdate}, #{initiative_field}, string_to_array(#{initiative_keyWords},','), #{initiative_user_id}, #{initiative_tag_id});   	
     </insert>
-    -->
+    
   </mapper>
 

@@ -42,6 +42,22 @@
             <h:form id="initiativesForm">
                 <p:fieldset legend="Opciones de Iniciativa" >
                     <h:panelGrid columns="3" >
+                        <p:panel id="addInitiativePanel" rendered="#{loginBean.user.role == 'Proponente de iniciativa o idea de proyecto'}" header="Registrar Iniciativa">
+                            <h:panelGrid columns="2" cellpadding="0">
+                                <a href="registrarIniciativa.xhtml">
+                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
+                                </a>
+                                <p:column>
+                                    <p:row>
+                                        <p>Registrar una nueva Iniciativa de proyecto para la Escuela</p>
+                                    </p:row>
+                                    <br/>
+                                    <br/>
+                                    <p:button outcome="registrarIniciativa.xhtml" value="Ir a Registrar Iniciativa"/>                                   
+                                </p:column>                                
+                            </h:panelGrid>
+                        </p:panel>
+                        
                         <p:panel id="searchInitiativePanel" header="Consultar Iniciativas">
                             <h:panelGrid columns="2" cellpadding="0">
                                 <a href="asignarPerfil.xhtml">
@@ -72,39 +88,7 @@
                                     <p:button outcome="index.xhtml" value="Ir a Actualizar Estado Iniciativa"/>                                     
                                 </p:column>                                
                             </h:panelGrid>
-                        </p:panel>
-                        
-                        <p:panel id="addInitiativePanel" header="Registrar Iniciativa">
-                            <h:panelGrid columns="2" cellpadding="0">
-                                <a href="asignarPerfil.xhtml">
-                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
-                                </a>
-                                <p:column>
-                                    <p:row>
-                                        <p>Registrar una nueva Iniciativa de proyecto para la Escuela</p>
-                                    </p:row>
-                                    <br/>
-                                    <br/>
-                                    <p:button outcome="index.xhtml" value="Ir a Registrar Iniciativa"/>                                     
-                                </p:column>                                
-                            </h:panelGrid>
-                        </p:panel>
-                        
-                        <p:panel id="editInitiativePanel" header="Modificar Iniciativa">
-                            <h:panelGrid columns="2" cellpadding="0">
-                                <a href="asignarPerfil.xhtml">
-                                    <img src="resources/img/tools/initiativesLogo.png" class="logoImg"/>
-                                </a>
-                                <p:column>
-                                    <p:row>
-                                        <p>Modificar o Editar una Iniciativa existente</p>                                        
-                                    </p:row>
-                                    <br/>
-                                    <br/>
-                                    <p:button outcome="index.xhtml" value="Ir a Modificar Iniciativa"/>                                     
-                                </p:column>                                
-                            </h:panelGrid>
-                        </p:panel>
+                        </p:panel>  
                         
                     </h:panelGrid>  
                 </p:fieldset>

@@ -60,15 +60,6 @@ public class UsersBean extends BaseBean {
         }        
     }
 
-    /*
-    public User searchUser(long id) {
-        try {
-            user = initiativeBankServices.searchUser(id);
-        } catch (Exception ex) {
-            Logger.getLogger(UsersBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return user;
-    }*/
 
  /*
     public void updateUser(long documento, Rol nuevoRol) {

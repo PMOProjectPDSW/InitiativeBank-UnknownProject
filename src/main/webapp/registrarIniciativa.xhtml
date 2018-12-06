@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Usuarios</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>   
+        <link rel="icon" type="image/png" href="resources/img/tools/InitiativeBankLogo.png"/>
+    </h:head>
+    <h:body>
+        <div class="topHeader">
+            <img src="resources/img/header/topHeaderImg.svg" class="image" />
+        </div>
+
+        <div class="topNavigation">
+            <div class="topNavigation-Center">
+                <p:button outcome="index.xhtml" value="Inicio" icon="fa fa-home"/> 
+                <p:button outcome="iniciativas.xhtml" value="Iniciativas" icon="fa fa-lightbulb-o"/>
+                <p:button outcome="estadisticas.xhtml" value="Estadisticas" icon="fa fa-bar-chart"/>
+                <p:button outcome="usuarios.xhtml" value="Usuarios" icon="fa fa-user"/>
+                <p:commandButton value="Salir" icon="fa fa-sign-out" actionListener="#{loginBean.logOut()}" />
+            </div>
+
+            <div class="topNavigation-Right">
+                <p:outputLabel value="#{loginBean.user.name}" />  
+                <br/>
+                <p:outputLabel value="#{loginBean.user.email}" />
+                <br/>
+                <p:outputLabel value="#{loginBean.user.role}" />
+                <br/>                
+            </div>
+        </div>
+
+        <div class="pageHeader">
+            <img src="resources/img/pages/asignProfileHeader.svg" class="image" />
+        </div>
+        <br/>
+        <div id="registerInitiativeDiv" class="loginClass">
+            <h:form id="registerInitiativeForm" >                
+                <p:growl id="growlRegisterInitiative" showDetail="true" sticky="false" />               
+                <p:fieldset legend="Registrar una nueva Iniciativa" >
+                    <h:panelGrid columns="1" cellpadding="2" class="panelLoginClass">
+
+                        <p:row>
+                            <p:outputLabel value="Titulo:" for="titleInitiative" />
+                            <p:inputText id="titleInitiative" required="true" value="#{initiativesBean.title}" title="Ingresa el título de tu Iniciativa" placeholder="Título Iniciativa"/>
+                            <p:tooltip id="toolTipTitle" for="titleInitiative" showEvent="focus" hideEvent="blur" />
+                        </p:row>
+                        
+                        <p:row>
+                            <p:outputLabel value="Descripción:" for="descriptionInitiative" />
+                            <p:inputText id="descriptionInitiative" required="true" value="#{initiativesBean.description}" title="Ingresa tu Iniciativa" placeholder="Descripción Iniciativa"/>
+                            <p:tooltip id="toolTipDescription" for="descriptionInitiative" showEvent="focus" hideEvent="blur" />
+                        </p:row>
+
+                        <p:row>
+                            <p:outputLabel value="Campo de Acción:" for="fieldInitiative" />
+                            <p:inputText id="fieldInitiative" required="true" value="#{initiativesBean.field}" title="Selecciona el campo de acción al cual pertenece tu Iniciativa" placeholder="Campo Acción Iniciativa"/>
+                            <p:tooltip id="toolTipField" for="fieldInitiative" showEvent="focus" hideEvent="blur" />
+                        </p:row>
+                        
+                        <p:row>
+                            <p:outputLabel value="Palabras Clave:" for="keyWordsInitiative" />
+                            <p:inputText id="keyWordsInitiative" required="true" value="#{initiativesBean.keyWords}" title="Ingresa las palabras clave de tu Iniciativa separadas por comas" placeholder="Palabras Clave"/>
+                            <p:tooltip id="toolTipKeyWords" for="keyWordsInitiative" showEvent="focus" hideEvent="blur" />
+                        </p:row>
+
+                        <p:row>
+                            <p:commandButton value="Registrar" update="growlRegisterInitiative registerInitiativeForm" actionListener="#{initiativesBean.registerInitiative()}" /> 
+                        </p:row>  
+                      
+                    </h:panelGrid> 
+
+                </p:fieldset>
+            </h:form>            
+        </div>
+        <br/>
+        <div class="footer">
+            <img src="resources/img/footer/footerImg.svg" class="image" />
+        </div>
+    </h:body>    
+</html>
