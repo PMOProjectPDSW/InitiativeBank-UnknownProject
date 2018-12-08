@@ -1,20 +1,20 @@
 ﻿# Proyecto Banco de Iniciativas
 ## PDSW - Procesos de Desarrollo de Software
 ### Team: Unknown Project
-![Drag Racing](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/src/main/webapp/resources/img/tools/InitiativeBankLogo.png "Logo")
+![alt text](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/src/main/webapp/resources/img/tools/InitiativeBankLogo.png "Logo")
 
 
 ## About Us
-	* **Periodo Académico:** 2018 - 2
-	* **Nombre del Curso:** PDSW - Procesos de Desarrollo de Software
-	* **Nombre de los Integrantes:** Pedro José Mayorga Navarrete
-	* **Nombre del Profesor:** Francisco José Cháves Alonso
-	* **Roles Asignados:**
-		* **Product Owner:** Francisco Cháves
-		* **Scrum Master:** Pedro Mayorga
-		* **Development Team:**
-			* - Pedro Mayorga
-		* **Stakeholder:** Jorge Acero - PMO
+	- **Periodo Académico:** 2018 - 2
+	- **Nombre del Curso:** PDSW - Procesos de Desarrollo de Software
+	- **Nombre de los Integrantes:** Pedro José Mayorga Navarrete
+	- **Nombre del Profesor:** Francisco José Cháves Alonso
+	- **Roles Asignados:**
+		- **Product Owner:** Francisco Cháves
+		- **Scrum Master:** Pedro Mayorga
+		- **Development Team:**
+			- - Pedro Mayorga
+		- **Stakeholder:** Jorge Acero - PMO
 
 ## Descripción del Producto
 > Esta *Aplicacion Web* es un **Banco de Iniciativas de Proyectos** de la Escuela Colombiana de Ingeniería, que gestiona principalmente el registro, consulta e interacción de las ideas para nuevos proyectos propuestos por parte de toda la comunidad de la Escuela.
