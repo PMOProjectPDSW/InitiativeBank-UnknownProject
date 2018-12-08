@@ -13,7 +13,7 @@
 	- **Product Owner:** Francisco Cháves
 	- **Scrum Master:** Pedro Mayorga
 	- **Development Team:**
-		* - Pedro Mayorga
+		* Pedro Mayorga
 	- **Stakeholder:** Jorge Acero - PMO
 
 ## Descripción del Producto
@@ -22,36 +22,36 @@
 > El Aplicativo registra nuevas ideas, que podrás ser consultadas y revisadas posteriormente por el **Departamento de Proyectos de la Escuela - PMO**, quienes evaluarán como se puede dar solución a las distintas ideas propuestos por miembros de diferentes áreas de la escuela.
 
 Como **Funcionalidades Básicas** encontramos:
-	* #### Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
-		Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden probar las diferentes funcionalidades de la Aplicación dependiendo del acceso que tengan los mismos a las herrameintas de el aplicativo:
-		- **Usuarios de Consulta:**
-			- **__Consulta__** la información de las diferentes Iniciativas.
-			- **__Muestra__** interés con el desarrollo de una Iniciativa de Proyecto que se encuentre en el banco mediante el Voto (dar like) sobre una Iniciativa.
-			- **__Deja__** Comentarios u observaciones sobre las Iniciativas de Proyecto. 
-			- **__Consulta__** las Iniciativas de acuerdo a Palabras Clave
-			- **__Entrega__** Estadísticas de las Iniciativas con base en la información registrada.
 
-		- **Proponente de Iniciativa de Proyecto:** (además de las opciones de "Usuarios de Consulta")
-			- **__Registra__** una nueva idea o Iniciativa.
-			- **__Consulta__** las Iniciativas que el Proponente ha realizado.
-			- **__Modifica__** una Iniciativa siempre y cuando se encuentre en el estado "En Espera de Revisión".
+#### Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
+Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden probar las diferentes funcionalidades de la Aplicación dependiendo del acceso que tengan los mismos a las herrameintas de el aplicativo:
+	+ **Usuarios de Consulta:**
+		- **__Consulta__** la información de las diferentes Iniciativas.
+		- **__Muestra__** interés con el desarrollo de una Iniciativa de Proyecto que se encuentre en el banco mediante el Voto (dar like) sobre una Iniciativa.
+		- **__Deja__** Comentarios u observaciones sobre las Iniciativas de Proyecto. 
+		- **__Consulta__** las Iniciativas de acuerdo a Palabras Clave
+		- **__Entrega__** Estadísticas de las Iniciativas con base en la información registrada.
 
-		- **Personal PMO - ODI:** (además de las opciones de "Usuarios de Consulta" y "Proponente de Iniciativa de Proyecto")
-			- **__Consulta__** las Iniciativas de Proyectos que los Proponentes han publicado.
-			- **__Cambia__** el estado de las Iniciativas a:
-				- **En Espera de Revisión:** La Iniciativa ha sido registrada y está a la espera de que alguien de la Oficina de Proyectos la revise. 
-				- **En Revisión:** La Iniciativa se encuentra en Revisión por parte de alguien de la Oficina de Proyectos
-				- **Proyecto:** La Iniciativa se ha considerado viable como proyecto y por lo tanto se encuentra en proceso de creación de Proyecto.
-				- **Solucionado:** La Iniciativa ya se encontraba solucionada en la Escuela, o el Proyecto que se creó para dicha idea ya fue solucionado satisfactoriamente.
+	+ **Proponente de Iniciativa de Proyecto:** (además de las opciones de "Usuarios de Consulta")
+		- **__Registra__** una nueva idea o Iniciativa.
+		- **__Consulta__** las Iniciativas que el Proponente ha realizado.
+		- **__Modifica__** una Iniciativa siempre y cuando se encuentre en el estado "En Espera de Revisión".
 
-		- **Administrador:**
-			- **__Modifica__** el Estado de las Iniciativas.
-			- **__Modifica__** el Rol de los Usuarios.
-			- **__Consulta__** toda la información relacionada con las ideas o Iniciativas.
+	+ **Personal PMO - ODI:** (además de las opciones de "Usuarios de Consulta" y "Proponente de Iniciativa de Proyecto")
+		- **__Consulta__** las Iniciativas de Proyectos que los Proponentes han publicado.
+		- **__Cambia__** el estado de las Iniciativas a:
+			* **En Espera de Revisión:** La Iniciativa ha sido registrada y está a la espera de que alguien de la Oficina de Proyectos la revise. 
+			* **En Revisión:** La Iniciativa se encuentra en Revisión por parte de alguien de la Oficina de Proyectos
+			* **Proyecto:** La Iniciativa se ha considerado viable como proyecto y por lo tanto se encuentra en proceso de creación de Proyecto.
+			* **Solucionado:** La Iniciativa ya se encontraba solucionada en la Escuela, o el Proyecto que se creó para dicha idea ya fue solucionado satisfactoriamente.
 
+	+ **Administrador:**
+		- **__Modifica__** el Estado de las Iniciativas.
+		- **__Modifica__** el Rol de los Usuarios.
+		- **__Consulta__** toda la información relacionada con las ideas o Iniciativas.
 	
-	- Imagen 1: Página de Inicio de Sesión, donde los usuarios pueden Autenticarse con su respectivo *"Usuario"* y *"Contraseña"*
-	![Drag Racing](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.png "Login")
+Imagen 1: Página de Inicio de Sesión, donde los usuarios pueden Autenticarse con su respectivo *"Usuario"* y *"Contraseña"*
+![Drag Racing](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.png "Login")
 
 Las **Funcionalidades Principales** las podemos encontrar divididas por la sección a la cuál pertenecen, donde encontramos las siguientes secciones:
 	* Iniciativas
