@@ -61,14 +61,48 @@ Desde acá, el usuario puede acceder a todas las Funcionalidades de el aplicativ
 + Estadísticas
 + Usuarios
 
-![Alt text](testImages/Login_Imagen1.PNG?raw=true "Index")
-Imagen 1: Página de Inicio del Aplciativo, donde los usuarios pueden ingresar a todas las funcionalidades y herramientas del mismo.
+![Alt text](testImages/Index_Imagen2.PNG?raw=true "Index")
+Imagen 2: Página de Inicio del Aplicativo, donde los usuarios pueden ingresar a todas las funcionalidades y herramientas del mismo.
 
 ### Iniciativas
 ----------------------
 En **Iniciativas** podemos encontrar las siguientes funcionalidades:
++ Registrar Iniciativa
++ Consultar Iniciativas
++ Consultar Iniciativas del Proponente
+
+![Alt text](testImages/Iniciativas_Imagen3.PNG?raw=true "Iniciativas")
+Imagen 3: Página de Inicio de las Iniciativas, donde los usuarios pueden ver las funcionalidades que pueden realizar con las Iniciativas.
 
 * ### Registrar Iniciativa
+----------------------
+En esta herramienta, los Proponentes pueden **Registrar** una nueva Iniciativa, ingresando:
++ Título
++ Descripción
++ Campo de Acción
++ Palabras Clave (Separadas por coma)
+
+![Alt text](testImages/RegistrarIniciativa_Imagen4.PNG?raw=true "Registrar Iniciativa")
+![Alt text](testImages/RegistrarIniciativa2_Imagen5.PNG?raw=true "Registrar Iniciativa")
+Imagen 4 y 5: Página para Registrar Iniciativas, donde los usuarios pueden agregar una nueva Iniciativa.
+
+* ### Consultar Iniciativas
+----------------------
+En esta herramienta, se pueden **Consultar** todas las Iniciativas Registradas:
+
+![Alt text](testImages/ConsultarIniciativas1_Imagen6.PNG?raw=true "Consultar Iniciativas")
+![Alt text](testImages/ConsultarIniciativas2_Imagen7.PNG?raw=true "Consultar Iniciativas")
+Imagen 6 y 7: Página para Consultar Iniciativas, donde los usuarios pueden ver todas las Iniciativas.
+
+* ### Consultar Iniciativas del Proponente
+----------------------
+En esta herramienta, se pueden **Consultar** todas las Iniciativas Registradas por el Proponente que se encuentra loggeado:
+
+![Alt text](testImages/ConsultarIniciativasProponente1_Imagen8.PNG?raw=true "Consultar Iniciativas Proponente")
+![Alt text](testImages/ConsultarIniciativasProponente2_Imagen9.PNG?raw=true "Consultar Iniciativas Proponente")
+Imagen 8 y 9: Página para Consultar Iniciativas del Proponente, donde se pueden ver todas las Iniciativas del Proponente registrado.
+
+
 
 
 
@@ -80,25 +114,17 @@ En **Iniciativas** podemos encontrar las siguientes funcionalidades:
 
 ## Credenciales de Usuarios para usar la Aplicación
 + **Administrador:**
-	- **Usuario:** 
-		admin@escuelaing.edu.co	
-	- **Contraseña:**
-		admin
+	- **Usuario:** admin@escuelaing.edu.co	
+	- **Contraseña:** admin
 + **Personal PMO - ODI:**
-	- **Usuario:** 
-		walter.blanco@escuelaing.edu.co	
-	- **Contraseña:**
-		password
+	- **Usuario:** walter.blanco@escuelaing.edu.co	
+	- **Contraseña:** password
 + **Proponente de Iniciativa de Proyecto:**
-	- **Usuario:** 
-		kanye.west.busto@escuelaing.edu.co	
-	- **Contraseña:**
-		password
+	- **Usuario:** kanye.west.busto@escuelaing.edu.co	
+	- **Contraseña:** password
 + **Usuarios de Consulta**
-	- **Usuario:** 
-		bruno.flores@escuelaing.edu.co	
-	- **Contraseña:**
-		password
+	- **Usuario:** bruno.flores@escuelaing.edu.co	
+	- **Contraseña:** password
 
 
 
