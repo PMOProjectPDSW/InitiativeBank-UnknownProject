@@ -161,20 +161,6 @@ En esta herramienta, se puede **Asignar o Cambiar** el Rol (o Tipo de Perfil) de
 ![Alt text](testImages/AsignarPerfil2_Imagen18.PNG?raw=true "Asignar Perfil")
 Imagen 17 y 18: Página para cambiar el Perfil de un Usuario.
 
-## Credenciales de Usuarios para usar la Aplicación
-+ **Administrador:**
-	- **Usuario:** admin@escuelaing.edu.co	
-	- **Contraseña:** admin
-+ **Personal PMO - ODI:**
-	- **Usuario:** walter.blanco@escuelaing.edu.co	
-	- **Contraseña:** password
-+ **Proponente de Iniciativa de Proyecto:**
-	- **Usuario:** kanye.west@escuelaing.edu.co	
-	- **Contraseña:** password
-+ **Usuarios de Consulta**
-	- **Usuario:** bruno.flores@escuelaing.edu.co	
-	- **Contraseña:** password
-
 ## Arquitectura y Diseño Detallado
 ### Modelo E-R
 ![Alt text](model/E-R_Model.png?raw=true "Modelo E-R")
@@ -188,7 +174,7 @@ Imagen 20: Diagrama de Clases usadas en la implementación Lógica en JAVA.
 ![Alt text](model/Architecture_Model.png?raw=true "Modelo Arquitectura")
 Imagen 21: Modelo de la Arquitectura usada en el Proyecto.
 
-## Capas
+### Capas
 Se utilizaron las siguientes capas:
 + **psdw.project.guice:** Inyector Guice, que permitió la conexion de los DAOs con la Base de Datos.
 + **psdw.project.services:** Acá se encuentran las funcionalidades del Banco de Inicitivas, es lo que cada Bean llama para ejecutar las funcionalidades.
@@ -201,27 +187,54 @@ Se utilizaron las siguientes capas:
 + **resources.mappers:** Mappers que permiten la conexión Base de Datos / Clases.
 + **Web Pages:** Vista Final del Aplicativo, FrontEnd.
 
+### Stack de Tecnologías
+En el proyecto se utilizaron las siguientes tecnologías:
++ **Construcción del Proyecto:**
+	- Apache Maven
++ **Lenguajes de Programación:**
+	- Java
+	- CSS
++ **Componentes de Interfaz de Usuario:**
+	- PrimeFaces
+	- JavaServer Faces
++ **Framework de Inyección de Dependencias:**
+	- Google Guice
++ **Gestor de Base de Datos:**
+	- PostgreSQL
++ **Sistema de Control de Versiones:**
+	- Github
++ **Sistema de Despliegue:**
+	- Heroku
 
+## Ejecutar Aplicación
+### Enlace de la aplicación en Heroku
+```
+heroku.com
+```
 
-## Run
-This WebApp runs through the localhost port:
-```
-8080
-```
-With the main page on the resource:
-```
-/faces/index
-```
-In the location:
-[localhost:8080/faces/index](localhost:8080/project/login.xhtml)
+### Correr la Aplicación localmente mediante:
 
-## How To Use
-	+ Nothing 1.
-		- Blas blas
-	+ Nothing 2.
-	+ Nothing 3.
-	+ Nothing 4.
+Compilar en maven:
+```
+mvn clean
+mvn package
+mvn tomcat7:run
+```
+Abrir localmente en el navegador, en la siguiente dirección:
+```
+[localhost:8080/project/login.xhtml](localhost:8080/project/login.xhtml)
+```
 
-## Restrictions
-* Restiction 1.
-* Restiction 2.
+## Credenciales de Usuarios para usar la Aplicación
++ **Administrador:**
+	- **Usuario:** admin@escuelaing.edu.co	
+	- **Contraseña:** admin
++ **Personal PMO - ODI:**
+	- **Usuario:** walter.blanco@escuelaing.edu.co	
+	- **Contraseña:** password
++ **Proponente de Iniciativa de Proyecto:**
+	- **Usuario:** kanye.west@escuelaing.edu.co	
+	- **Contraseña:** password
++ **Usuarios de Consulta**
+	- **Usuario:** bruno.flores@escuelaing.edu.co	
+	- **Contraseña:** password
