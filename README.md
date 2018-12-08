@@ -169,7 +169,7 @@ Imagen 17 y 18: Página para cambiar el Perfil de un Usuario.
 	- **Usuario:** walter.blanco@escuelaing.edu.co	
 	- **Contraseña:** password
 + **Proponente de Iniciativa de Proyecto:**
-	- **Usuario:** kanye.west.busto@escuelaing.edu.co	
+	- **Usuario:** kanye.west@escuelaing.edu.co	
 	- **Contraseña:** password
 + **Usuarios de Consulta**
 	- **Usuario:** bruno.flores@escuelaing.edu.co	
