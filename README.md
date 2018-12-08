@@ -175,9 +175,14 @@ Imagen 17 y 18: Página para cambiar el Perfil de un Usuario.
 	- **Usuario:** bruno.flores@escuelaing.edu.co	
 	- **Contraseña:** password
 
+## Arquitectura y Diseño Detallado
+### Modelo E-R
+![Alt text](model/E-R_Model.png?raw=true "Modelo E-R")
+Imagen 19: Modelo Entidad-Relacion de la Base de Datos.
 
-## Model
-Modelación del proyecto
+### Diagrama de Clases (Ingeniería Inversa)
+![Alt text](model/Class_Diagram.png?raw=true "Diagrama de Clases")
+Imagen 20: Diagrama de Clases usadas en la implementación Lógica en JAVA.
 
 ## Run
 This WebApp runs through the localhost port:
