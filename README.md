@@ -1,7 +1,7 @@
 ﻿# Proyecto Banco de Iniciativas
 ## PDSW - Procesos de Desarrollo de Software
 ### Team: Unknown Project
-![alt text](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/src/main/webapp/resources/img/tools/InitiativeBankLogo.png "Logo")
+![Alt text](src/main/webapp/resources/img/tools/InitiativeBankLogo.png?raw=true "Logo")
 
 
 ## About Us
@@ -52,8 +52,7 @@ Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden 
 	- **__Consulta__** toda la información relacionada con las ideas o Iniciativas.
 	
 Imagen 1: Página de Inicio de Sesión, donde los usuarios pueden Autenticarse con su respectivo *"Usuario"* y *"Contraseña"*
-![alt text](https://raw.githubusercontent.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.PNG)
-![Alt text](testImages/Login_Imagen1.PNG?raw=true "Title")
+![Alt text](testImages/Login_Imagen1.PNG?raw=true "Login")
 
 Las **Funcionalidades Principales** las podemos encontrar divididas por la sección a la cuál pertenecen, donde encontramos las siguientes secciones:
 	* Iniciativas
