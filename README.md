@@ -82,7 +82,7 @@ En esta herramienta, los Proponentes pueden **Registrar** una nueva Iniciativa, 
 + Campo de Acción
 + Palabras Clave (Separadas por coma)
 
-![Alt text](testImages/RegistrarIniciativa_Imagen4.PNG?raw=true "Registrar Iniciativa")
+![Alt text](testImages/RegistrarIniciativa1_Imagen4.PNG?raw=true "Registrar Iniciativa")
 ![Alt text](testImages/RegistrarIniciativa2_Imagen5.PNG?raw=true "Registrar Iniciativa")
 Imagen 4 y 5: Página para Registrar Iniciativas, donde los usuarios pueden agregar una nueva Iniciativa.
 
