@@ -23,7 +23,8 @@
 
 Como **Funcionalidades Básicas** encontramos:
 
-### Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
+## Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
+***
 Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden probar las diferentes funcionalidades de la Aplicación dependiendo del acceso que tengan los mismos a las herrameintas de el aplicativo:
 + **Usuarios de Consulta:**
 	- **__Consulta__** la información de las diferentes Iniciativas.
@@ -45,13 +46,13 @@ Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden 
 		* **Proyecto:** La Iniciativa se ha considerado viable como proyecto y por lo tanto se encuentra en proceso de creación de Proyecto.
 		* **Solucionado:** La Iniciativa ya se encontraba solucionada en la Escuela, o el Proyecto que se creó para dicha idea ya fue solucionado satisfactoriamente.
 
-+ **Administrador:**
++ **Administrador:** (además de las opciones de "Usuarios de Consulta", "Proponente de Iniciativa de Proyecto" y "Personal PMO - ODI")
 	- **__Modifica__** el Estado de las Iniciativas.
 	- **__Modifica__** el Rol de los Usuarios.
 	- **__Consulta__** toda la información relacionada con las ideas o Iniciativas.
 	
 Imagen 1: Página de Inicio de Sesión, donde los usuarios pueden Autenticarse con su respectivo *"Usuario"* y *"Contraseña"*
-![alt text](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.png "Login")
+![alt text](https://raw.githubusercontent.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.png "Login")
 
 Las **Funcionalidades Principales** las podemos encontrar divididas por la sección a la cuál pertenecen, donde encontramos las siguientes secciones:
 	* Iniciativas
@@ -84,10 +85,11 @@ In the location:
 [localhost:8080/faces/index](localhost:8080/project/login.xhtml)
 
 ## How To Use
-	1. Nothing 1.
-	2. Nothing 2.
-	3. Nothing 3.
-	4. Nothing 4.
+	+ Nothing 1.
+		- Blas blas
+	+ Nothing 2.
+	+ Nothing 3.
+	+ Nothing 4.
 
 ## Restrictions
 * Restiction 1.
