@@ -23,12 +23,12 @@
 
 Como **Funcionalidades Básicas** encontramos:
 
-## Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
-***
+### Poder **Autenticarse** en la página web mediante un **__Usuario__** y **__Contraseña__** creados.
+----------------------
 Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden probar las diferentes funcionalidades de la Aplicación dependiendo del acceso que tengan los mismos a las herrameintas de el aplicativo:
 + **Usuarios de Consulta:**
-	- **__Consulta__** la información de las diferentes Iniciativas.
-	- **__Muestra__** interés con el desarrollo de una Iniciativa de Proyecto que se encuentre en el banco mediante el Voto (dar like) sobre una Iniciativa.
+		- **__Consulta__** la información de las diferentes Iniciativas.
+		- **__Muestra__** interés con el desarrollo de una Iniciativa de Proyecto que se encuentre en el banco mediante el Voto (dar like) sobre una Iniciativa.
 	- **__Deja__** Comentarios u observaciones sobre las Iniciativas de Proyecto. 
 	- **__Consulta__** las Iniciativas de acuerdo a Palabras Clave
 	- **__Entrega__** Estadísticas de las Iniciativas con base en la información registrada.
@@ -52,7 +52,8 @@ Para esto se dispone de los siguientes tipos de *Usuario* con los que se pueden 
 	- **__Consulta__** toda la información relacionada con las ideas o Iniciativas.
 	
 Imagen 1: Página de Inicio de Sesión, donde los usuarios pueden Autenticarse con su respectivo *"Usuario"* y *"Contraseña"*
-![alt text](https://raw.githubusercontent.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.png "Login")
+![alt text](https://raw.githubusercontent.com/PMOProjectPDSW/InitiativeBank-UnknownProject/tree/master/testImages/Login_Imagen1.PNG)
+![Alt text](testImages/Login_Imagen1.PNG?raw=true "Title")
 
 Las **Funcionalidades Principales** las podemos encontrar divididas por la sección a la cuál pertenecen, donde encontramos las siguientes secciones:
 	* Iniciativas
