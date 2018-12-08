@@ -184,6 +184,25 @@ Imagen 19: Modelo Entidad-Relacion de la Base de Datos.
 ![Alt text](model/Class_Diagram.png?raw=true "Diagrama de Clases")
 Imagen 20: Diagrama de Clases usadas en la implementación Lógica en JAVA.
 
+### Descripción de la Arquitectura (Capas)
+![Alt text](model/Architecture_Model.png?raw=true "Modelo Arquitectura")
+Imagen 21: Modelo de la Arquitectura usada en el Proyecto.
+
+## Capas
+Se utilizaron las siguientes capas:
++ **psdw.project.guice:** Inyector Guice, que permitió la conexion de los DAOs con la Base de Datos.
++ **psdw.project.services:** Acá se encuentran las funcionalidades del Banco de Inicitivas, es lo que cada Bean llama para ejecutar las funcionalidades.
++ **psdw.project.services.impl:** Metodos concretos de la interfaz Services.
++ **psdw.project.beans:** ManagedBeans para cada operación solicitada por la Aplicación Web.
++ **psdw.project.persistence.dao:** Interfaces para cada DAO.
++ **psdw.project.persistence.dao.mybatis:** Implementación de los metodos concretos para cada DAO.
++ **psdw.project.persistence.dao.mappers:** Conexión entre MyBatis con los Mappers.xml de la Base de Datos.
++ **psdw.project.entities:** Modelo que obtiene la información de las tablas de la base de datos mediante los Mappers.
++ **resources.mappers:** Mappers que permiten la conexión Base de Datos / Clases.
++ **Web Pages:** Vista Final del Aplicativo, FrontEnd.
+
+
+
 ## Run
 This WebApp runs through the localhost port:
 ```
