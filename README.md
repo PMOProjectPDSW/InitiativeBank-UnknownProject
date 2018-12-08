@@ -102,15 +102,64 @@ En esta herramienta, se pueden **Consultar** todas las Iniciativas Registradas p
 ![Alt text](testImages/ConsultarIniciativasProponente2_Imagen9.PNG?raw=true "Consultar Iniciativas Proponente")
 Imagen 8 y 9: Página para Consultar Iniciativas del Proponente, donde se pueden ver todas las Iniciativas del Proponente registrado.
 
+* ### Consultar Iniciativas por Palabras Clave
+----------------------
+En esta herramienta, se pueden **Consultar** todas las Iniciativas Registradas por las Palabras Clave que desee buscar:
+
+![Alt text](testImages/ConsultarIniciativasPalabrasClave_Imagen10.PNG?raw=true "Consultar Iniciativas por Palabras Clave")
+Imagen 10: Página para Consultar Iniciativas por Palabras Clave, donde se pueden ver todas las Iniciativas dada una Palabra Clave.
+
+* ### Consultar Iniciativas por el Estado de la Iniciativa
+----------------------
+En esta herramienta, se pueden **Consultar** todas las Iniciativas Registradas por el Estado de la Iniciativa:
+
+![Alt text](testImages/ConsultarIniciativasEstado_Imagen11.PNG?raw=true "Consultar Iniciativas Proponente")
+Imagen 11: Página para Consultar Iniciativas por el Estado de la Iniciativa, donde se pueden ver todas las Iniciativas dado un Estado.
+
+* ### Modificar el Estado de una Iniciativa
+----------------------
+En esta herramienta, se puede **Modificar** el Estado de la Iniciativa, seleccionando:
++ Iniciativa
++ Nuevo Estado de la Iniciativa
+
+![Alt text](testImages/ModificarEstado1_Imagen12.PNG?raw=true "Modificar Estado Iniciativa")
+![Alt text](testImages/ModificarEstado2_Imagen13.PNG?raw=true "Modificar Estado Iniciativa")
+Imagen 12 y 13: Página para Modificar el Estado de una Iniciativa, seleccionandola junto con su nuevo estado.
+
+### Estadísticas
+----------------------
+En **Estadísticas** podemos encontrar las siguientes funcionalidades:
++ Consultar Estadísticas de Iniciativas por Areas
+
+![Alt text](testImages/Estadisticas_Imagen14.PNG?raw=true "Estadisticas")
+Imagen 14: Página de Inicio de las Estadísticas, donde los usuarios pueden ver las funcionalidades que pueden realizar con las Estadisticas.
 
 
+* ### Consultar Estadísticas de Iniciativas por Areas
+----------------------
+En esta herramienta, se puede **Consultar** las estadísticas de las Iniciativas existentes por Areas de las que son parte los proponentes:
+
+![Alt text](testImages/EstadisticasArea_Imagen15.PNG?raw=true "Estadisticas de Iniciativas por Area")
+Imagen 15: Página para mostrar las estadisticas de iniciativas realizadas por el area de los proponentes.
+
+### Usuarios
+----------------------
+En **Usuarios** podemos encontrar las siguientes funcionalidades:
++ Asignar o cambiar el tipo de Perfil de un Usuario
+
+![Alt text](testImages/Usuarios_Imagen16.PNG?raw=true "Usuarios")
+Imagen 16: Página de Inicio de las Usuarios, donde los usuarios pueden ver las funcionalidades que pueden realizar con las Usuarios.
 
 
+* ### Asignar o Cambiar el tipo de Perfil de un Usuario
+----------------------
+En esta herramienta, se puede **Asignar o Cambiar** el Rol (o Tipo de Perfil) de un Usuario, seleccioanndo:
++ Usuario
++ Nuevo Rol del Usuario
 
-
-
-
-> De igual manera, dicho sistema autentica a los usuarios 
+![Alt text](testImages/AsignarPerfil1_Imagen17.PNG?raw=true "Asignar Perfil")
+![Alt text](testImages/AsignarPerfil2_Imagen18.PNG?raw=true "Asignar Perfil")
+Imagen 17 y 18: Página para cambiar el Perfil de un Usuario.
 
 ## Credenciales de Usuarios para usar la Aplicación
 + **Administrador:**
@@ -125,12 +174,6 @@ Imagen 8 y 9: Página para Consultar Iniciativas del Proponente, donde se pueden
 + **Usuarios de Consulta**
 	- **Usuario:** bruno.flores@escuelaing.edu.co	
 	- **Contraseña:** password
-
-
-
-
-
-
 
 
 ## Model
