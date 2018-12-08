@@ -10,8 +10,7 @@
         <typeAlias type="pdsw.project.entities.User" alias="User"/>
         <typeAlias type="pdsw.project.entities.Initiative" alias="Initiative"/>
         <typeAlias type="pdsw.project.entities.Comment" alias="Comment"/>
-        <typeAlias type="pdsw.project.entities.Vote" alias="Vote"/>        
-        <typeAlias type="pdsw.project.entities.Role" alias="Role"/>
+        <typeAlias type="pdsw.project.entities.Vote" alias="Vote"/>
         <typeAlias type="pdsw.project.entities.Tag" alias="Tag"/>
     </typeAliases>
     
