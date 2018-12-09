@@ -209,7 +209,7 @@ En el proyecto se utilizaron las siguientes tecnologías:
 ## Ejecutar Aplicación
 ### Enlace de la aplicación en Heroku
 
-+ [localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
++ [Banco Iniciativas Heroku App](https://bancoiniciativas-escuelaing.herokuapp.com)
 
 
 ### Correr la Aplicación localmente mediante:
@@ -302,8 +302,4 @@ Imagen 25 y 26: Release Burndown Chart del Proyecto de Trello y Github.
 + Modelo Base de Datos en Vertabelo
 	- [Modelo DB Vertabelo](https://my.vertabelo.com/doc/POS6lhOYKZVcX1NFaRpJmN4lNoxZICAG)
 + Aplicación WEb en Heroku
-	- [Heroku Web App]()
-
-
-
-
+	- [Heroku Web App](https://bancoiniciativas-escuelaing.herokuapp.com)
