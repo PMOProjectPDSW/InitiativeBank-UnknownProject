@@ -208,9 +208,9 @@ En el proyecto se utilizaron las siguientes tecnologías:
 
 ## Ejecutar Aplicación
 ### Enlace de la aplicación en Heroku
-```
-[localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
-```
+
++ [localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
+
 
 ### Correr la Aplicación localmente mediante:
 
@@ -221,9 +221,9 @@ mvn package
 mvn tomcat7:run
 ```
 Abrir localmente en el navegador, en la siguiente dirección:
-```
-[localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
-```
+
++ [localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
+
 + **NOTA: En caso de que la aplicación no corra en Linux, ejecutar en Windows.
 
 ## Credenciales de Usuarios para usar la Aplicación
@@ -247,13 +247,14 @@ Como metodología para el proyecto, me enfoque primero que todo en conseguir que
 Luego de tener lo anterior listo, ya pude pasar a realizar las Historias de Usuario del proyecto, empezando logicamente por la autenticación de usuarios y posteriormente por las funcionalidades de Usuarios/Iniciativas/Estadisticas, en este punto, solo me concentré en realizar una funcionalidad a la vez y tenerla completa funcionando satisfactoriamente para después continuar con las demas funcionalidades. Sin embargo este punto las cosas se facilitaron un poco porque al ya haber hecho por ejemplo las consultas de usuarios, tenía entonces ya una base para construir las consultas de Iniciativas, aunque fueran distintas, ya tenía una especie de Plantilla para poder realizarla más rápidamente y así sucesivamente con las demás historias de usuario.
 
 ### Enlace a Trello
-```
-[Tablero en Trello](https://trello.com/b/lXYRirub)
-```
+
++ [Tablero en Trello](https://trello.com/b/lXYRirub)
+
 ### Release-Burndown Chart
-```
-[Release-Burndown Chart](https://BurndownForTrello.com/share/wwq7te8zof)
-```
+-----------------------
+
++ [Release-Burndown Chart](https://BurndownForTrello.com/share/wwq7te8zof)
+
 ![Alt text](scrum/Release-Burndown.PNG?raw=true "Release Burndown Chart")
 Imagen 22: Release Burndown Chart del Proyecto.
 
@@ -275,6 +276,7 @@ Imagen 22: Release Burndown Chart del Proyecto.
 + Generar Estadisticas de la Información por Estado
 
 ### Único Sprint (Sprint 3)
+--------------
 
 **Sprint-Backlog**
 
@@ -288,8 +290,19 @@ Imagen 23 y 24: Sprint Backlog del Proyecto.
 ![Alt text](scrum/Github-Release-Burndown.PNG?raw=true "Release Burndown Chart")
 Imagen 25 y 26: Release Burndown Chart del Proyecto de Trello y Github.
 
-
-
+## Recursos del Proyecto
++ Repositorio de Github
+	- [Repositorio Github](https://github.com/PMOProjectPDSW/InitiativeBank-UnknownProject)
++ Carpeta del Proyecto en Drive
+	- [Carpeta Google Drive](https://drive.google.com/drive/folders/19PsS1FSDVDK46TC08_CDwVMzYOcyIlWx?usp=sharing)
++ Tablero en Trello
+	- [Tablero de Trello](https://trello.com/b/lXYRirub)
++ Release Burndown Chart
+	- [Release-Burndown Chart](https://BurndownForTrello.com/share/wwq7te8zof)
++ Modelo Base de Datos en Vertabelo
+	- [Modelo DB Vertabelo](https://my.vertabelo.com/doc/POS6lhOYKZVcX1NFaRpJmN4lNoxZICAG)
++ Aplicación WEb en Heroku
+	- [Heroku Web App]()
 
 
 
