@@ -209,7 +209,7 @@ En el proyecto se utilizaron las siguientes tecnologías:
 ## Ejecutar Aplicación
 ### Enlace de la aplicación en Heroku
 ```
-heroku.com
+[localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
 ```
 
 ### Correr la Aplicación localmente mediante:
@@ -222,8 +222,9 @@ mvn tomcat7:run
 ```
 Abrir localmente en el navegador, en la siguiente dirección:
 ```
-[localhost:8080/project/login.xhtml](localhost:8080/project/login.xhtml)
+[localhost:8080/project/login.xhtml](https://localhost:8080/project/login.xhtml)
 ```
++ **NOTA: En caso de que la aplicación no corra en Linux, ejecutar en Windows.
 
 ## Credenciales de Usuarios para usar la Aplicación
 + **Administrador:**
@@ -238,3 +239,58 @@ Abrir localmente en el navegador, en la siguiente dirección:
 + **Usuarios de Consulta**
 	- **Usuario:** bruno.flores@escuelaing.edu.co	
 	- **Contraseña:** password
+
+## Descripción del Proceso
+### Metodología
+Como metodología para el proyecto, me enfoque primero que todo en conseguir que la capa de persistencia del proyecto funcionara correctamente, que no hubiera ningún error en la comunicación entre la lógica del proyecto y la base de datos. Esto implicó hacer en primer lugar, todos los DAOs, MyBatis__DAOS, Mapppers.java, Mappers.xml y Entidades de mi Modelo para poder corroborar que estuvieran sirviendo perfectamente sin errores y que todos los registros de la base de datos lo estuviera obteniendo satisfactoriamente en mi proyecto JAVA. Cabe resaltar que antes de realizar esto se tuvo que crear la estructura del proyecto, además de la respectiva Base de Datos en PostgreSQL.
+
+Luego de tener lo anterior listo, ya pude pasar a realizar las Historias de Usuario del proyecto, empezando logicamente por la autenticación de usuarios y posteriormente por las funcionalidades de Usuarios/Iniciativas/Estadisticas, en este punto, solo me concentré en realizar una funcionalidad a la vez y tenerla completa funcionando satisfactoriamente para después continuar con las demas funcionalidades. Sin embargo este punto las cosas se facilitaron un poco porque al ya haber hecho por ejemplo las consultas de usuarios, tenía entonces ya una base para construir las consultas de Iniciativas, aunque fueran distintas, ya tenía una especie de Plantilla para poder realizarla más rápidamente y así sucesivamente con las demás historias de usuario.
+
+### Enlace a Trello
+```
+[Tablero en Trello](https://trello.com/b/lXYRirub)
+```
+### Release-Burndown Chart
+```
+[Release-Burndown Chart](https://BurndownForTrello.com/share/wwq7te8zof)
+```
+![Alt text](scrum/Release-Burndown.PNG?raw=true "Release Burndown Chart")
+Imagen 22: Release Burndown Chart del Proyecto.
+
+**Puntos Realizados:**
++ Autenticar Usuarios Basica
++ Asignar Perfil a Usuarios
++ Registrar Idea o Iniciativa
++ Modificar el estado de la Iniciativa
++ Consultar Iniciativas por Palabras Clave
++ Generar Estadisticas por Areas
++ Consultar todas las Ideas o Iniciativas
++ Consultar Ideas o Iniciativas por Estado
++ Consultar Ideas o Iniciativas del Proponente
+
+**Puntos Faltantes:**
++ Mostrar Interes por una Iniciativa
++ Agrupar Iniciativas Relacionadas
++ Dar Like a una Iniciativa
++ Generar Estadisticas de la Información por Estado
+
+### Único Sprint (Sprint 3)
+
+**Sprint-Backlog**
+
+![Alt text](scrum/Sprint-Backlog1.PNG?raw=true "Sprint Backlog")
+![Alt text](scrum/Sprint-Backlog2.PNG?raw=true "Sprint Backlog")
+Imagen 23 y 24: Sprint Backlog del Proyecto.
+
+**Release Burndown Chart**
+
+![Alt text](scrum/Release-Burndown.PNG?raw=true "Release Burndown Chart")
+![Alt text](scrum/Github-Release-Burndown.PNG?raw=true "Release Burndown Chart")
+Imagen 25 y 26: Release Burndown Chart del Proyecto de Trello y Github.
+
+
+
+
+
+
+
