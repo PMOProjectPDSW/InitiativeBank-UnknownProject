@@ -18,7 +18,7 @@
 	
 ## **Despliegue en Heroku**
 
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](http://tetris-combat.herokuapp.com/)
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://bancoiniciativas-escuelaing.herokuapp.com/)
 
 **Enlace:** [`bancoiniciativas-escuelaing.herokuapp.com/`](https://bancoiniciativas-escuelaing.herokuapp.com/)
 
