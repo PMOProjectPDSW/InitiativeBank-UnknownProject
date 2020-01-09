@@ -15,6 +15,12 @@
 	- **Development Team:**
 		* Pedro Mayorga
 	- **Stakeholder:** Jorge Acero - PMO
+	
+## **Despliegue en Heroku**
+
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](http://tetris-combat.herokuapp.com/)
+
+**Enlace:** [`bancoiniciativas-escuelaing.herokuapp.com/`](https://bancoiniciativas-escuelaing.herokuapp.com/)
 
 ## Descripción del Producto
 > Esta *Aplicacion Web* es un **Banco de Iniciativas de Proyectos** de la Escuela Colombiana de Ingeniería, que gestiona principalmente el registro, consulta e interacción de las ideas para nuevos proyectos propuestos por parte de toda la comunidad de la Escuela.
